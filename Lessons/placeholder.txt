@@ -1,2 +1,0 @@
-test content
-some new content from web UI
