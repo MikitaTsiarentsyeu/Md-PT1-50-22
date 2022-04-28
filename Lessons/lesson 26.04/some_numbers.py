@@ -1,7 +1,5 @@
-# from decimal import Decimal
-# import fractions
-
-from sympy import frac
+import decimal
+import fractions
 
 print(type(30000000000000000000000000000000000000000000000000000))
 
@@ -34,7 +32,7 @@ print(x, type(x))
 print(1.1 + 2.2 == 3.3)
 
 
-# x = Decimal(0.1)
-# print(x, type(x))
+x = decimal.Decimal(0.1)
+print(x, type(x))
 
-# print(fractions.Fraction(2.5))
+print(fractions.Fraction(2.5))
