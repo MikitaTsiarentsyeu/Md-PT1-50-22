@@ -1,0 +1,7 @@
+amount = float(input('Enter deposit amount: '))
+term = float(input('Enter deposit term, years: '))
+rate = float(input('Enter deposit interest rate in %: '))
+total_sum = round(amount * (1 + rate / 100 / 12)**(term * 12), 2)
+total_rate_sum = round(total_sum - amount, 2)
+print('Total deposit amount =', '{:,.2f}'.format(total_sum).replace(',', ' '), end=', ')
+print('included amount of interest =', '{:,.2f}'.format(total_rate_sum).replace(',', ' '))

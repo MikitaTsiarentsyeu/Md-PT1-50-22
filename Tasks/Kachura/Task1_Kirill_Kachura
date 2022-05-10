@@ -1,0 +1,6 @@
+start_sum = 20000
+interest_rate = 15
+deposit_term_years = 5
+capit_times_in_year = 12
+final_sum = start_sum * (1 + interest_rate/(100*capit_times_in_year))**(capit_times_in_year*deposit_term_years)
+print (round(final_sum, 2))
