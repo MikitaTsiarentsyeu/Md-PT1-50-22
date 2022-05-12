@@ -56,6 +56,10 @@ def out_time(mas):
     if mas[2] == 0 and mas[3] == 0:
         print(f"{numbers_for_out.get(hour)} {declension_word_hours(hour)} ровно")
 
+    # output minutes == 30
+    elif mas[2] == 3 and mas[3] == 0:
+        print(f"половина {time_line(hour)}")
+
     # output minutes if time from 01 to 44 not including 30
     elif 0 <= mas[2] < 4 and 0 <= mas[3] < 10 or mas[2] == 4 and 0 < mas[3] < 5:
         # output minutes if time from 01 to 09
@@ -67,10 +71,6 @@ def out_time(mas):
         # output remaining time
         else:
             print(f"{numbers_for_out.get(mas[2] * 10)} {numbers_minutes_start.get(mas[3])} {declision_word_minutes(mas[3])} {time_line(hour)}")
-
-    # output minutes == 30
-    elif mas[2] == 3 and mas[3] == 0:
-        print(f"половина {time_line(hour)}")
 
     # output minutes if time from 45 to 59
     else:
