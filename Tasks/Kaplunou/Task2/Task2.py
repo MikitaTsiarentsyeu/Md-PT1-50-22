@@ -1,8 +1,10 @@
 import time
 Choice=input("do you want input time or use current time? Yes or No: ")
 if Choice == "Yes":
-    CurentHour = int(input("Input hours: "))
-    CurentMinute = int(input("Input minutes: "))
+    Time = input("Input time in format hh:mm: ")
+    Time=Time.split(":")
+    CurentHour = int(Time[0])
+    CurentMinute = int(Time[1])
 else:
     seconds = time.time()
     CurrentTime = time.localtime(seconds)
