@@ -28,7 +28,7 @@ def input_time_user():
             s = corrected_time(a)
 
             # check if the entered time is correct
-            if 0 <= s[0] * 10 + s[1] < 24 and 0 <= s[2] * 10 + s[3] < 60:
+            if 0 <= s[0] * 10 + s[1] < 24 and 0 <= s[2] * 10 + s[3] < 60 and len(s) == 4:
                 return s
 
             # output for explanation
