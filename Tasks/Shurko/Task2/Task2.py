@@ -34,16 +34,13 @@ def minutes_in_words (my_time):
     else: print ('Out of range!!!!')
 
 def hour_in_words (h_time):
-    h2w = minut_word
     
-    dif_dict = {1: 'один', 2: 'два'}  # need another solution
-    
-    h2w.update(dif_dict)
+    minut_word[1] = 'один'
+    minut_word[2] = 'два'
     h_time = int(h_time)
         
-
     def hour_ends(var):
-            s = h2w.get(var)
+            s = minut_word.get(var)
             s = s[len(s)-1]
             if s == "ь": 
                 return(" часов")
@@ -108,19 +105,11 @@ elif user_choice == 2:
             elif m == 4:
                 st = st.replace('четыре', 'четырех')
 
-
             print (f'без {st} {half_hour[hh]}')
-         
-            
+            print (minut_word)
 
 else:
     print ('Incorect choice')
 
 
-
-        
-
-
-
-#minutes_in_words(input ('input number 0-59 ',))
 
