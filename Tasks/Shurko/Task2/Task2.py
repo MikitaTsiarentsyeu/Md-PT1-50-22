@@ -106,8 +106,7 @@ elif user_choice == 2:
                 st = st.replace('четыре', 'четырех')
 
             print (f'без {st} {half_hour[hh]}')
-            print (minut_word)
-
+            
 else:
     print ('Incorect choice')
 
