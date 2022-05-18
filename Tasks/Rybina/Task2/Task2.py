@@ -9,13 +9,17 @@ if int(time_mode) == 1:
     current_time = current_time.strftime("%H-%M")
     x_hh, x_mm = map(int, current_time.split("-", 1))
 elif int(time_mode) == 2:
-    time_input = (input("Пожалуйста, введите время в формате hh:mm\n"))
-    x_hh, x_mm = map(int, time_input.split(":", 1))
+    time_input = input("Пожалуйста, введите время в формате hh:mm\n")
+    if time_input[0:2].isdigit() == True and time_input[3:5].isdigit() == True and time_input[2] == ":":
+        x_hh, x_mm = map(int, time_input.split(":", 1))
+    else:
+        print("Некорректный ввод")
+        quit()
 else:
     print("Некорректный ввод")
     quit()
 
-if x_hh < 0 or x_hh > 24:
+if x_hh < 0 or x_hh > 24 or x_mm < 0 or x_mm > 59:
      print("Некорректный ввод")
 elif x_mm == 00:
     if x_hh == 0 or x_hh == 12 or x_hh == 24:
