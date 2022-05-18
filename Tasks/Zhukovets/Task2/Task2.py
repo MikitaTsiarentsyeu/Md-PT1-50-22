@@ -102,22 +102,25 @@ def time_convertor(time_string):
 
 
 def main():
-    user_choice = input("Какая опция вас интересует?\n"
-                        "Если вы хотите узнать текущее время - нажмите '1'\n"
-                        "Если вы хотите задать время - нажмите '2'\n"
-                        ":")
-    if user_choice == '1':
-        time_string = datetime.datetime.now().strftime("%H:%M")
-        return time_convertor(time_string)
-    elif user_choice == '2':
-        time_string = input("Пожалуйста введите интересующее вас время в формате 'ЧЧ:ММ'\n:")
-        if time_string.split(":")[0].isdigit() and time_string.split(":")[-1].isdigit():
+    while True:
+        user_choice = input("Какая опция вас интересует?\n"
+                            "Если вы хотите узнать текущее время - нажмите '1'\n"
+                            "Если вы хотите задать время - нажмите '2'\n"
+                            ":")
+        if user_choice == '1':
+            time_string = datetime.datetime.now().strftime("%H:%M")
             return time_convertor(time_string)
+        elif user_choice == '2':
+            time_string = input("Пожалуйста введите интересующее вас время в формате 'ЧЧ:ММ'\n:")
+            if time_string.split(":")[0].isdigit() and time_string.split(":")[-1].isdigit():
+                return time_convertor(time_string)
+
+            else:
+                print("Вы ввели интересующую вас дату не в формате 'ЧЧ:ММ', попробуйте ещё раз.")
+                print("--------------------------------------------------------------------------")
 
         else:
-            return "Вы ввели интересующую вас дату не в формате 'ЧЧ:ММ', попробуйте ещё раз."
-    else:
-        return "Ошибка. Введите выбранную вами опцию используя символы '1' или '2'"
+            print("Ошибка. Введите выбранную вами опцию используя символы '1' или '2'")
 
 
 print(main())
