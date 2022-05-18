@@ -98,15 +98,17 @@ def main():
             time_string = datetime.datetime.now().strftime("%H:%M")
             return time_convertor(time_string)
         elif user_choice == '2':
-            time_string = input("Пожалуйста введите интересующее вас время в формате 'ЧЧ:ММ'\n:")
-            validation_value1, validation_value2 = time_string.split(":")[0], time_string.split(":")[-1]
-            if (validation_value1.isdigit() and len(validation_value1) == 2) \
-                    and (validation_value2.isdigit() and len(validation_value2) == 2):
-                return time_convertor(time_string)
+            try:
+                time_string = input("Пожалуйста введите интересующее вас время в формате 'ЧЧ:ММ'\n: ")
+                validation_value1, validation_value2 = time_string.split(":")[0], time_string.split(":")[-1]
+                if (validation_value1.isdigit() and len(validation_value1) == 2) \
+                        and (validation_value2.isdigit() and len(validation_value2) == 2):
+                    return time_convertor(time_string)
+                else:
+                    print("Вы ввели интересующую вас дату не в формате 'ЧЧ:ММ', попробуйте ещё раз.\n\n")
 
-            else:
-                print("Вы ввели интересующую вас дату не в формате 'ЧЧ:ММ', попробуйте ещё раз.")
-                print("--------------------------------------------------------------------------")
+            except ValueError:
+                print("Скорее всего вы ввели не существующее время. Попробуйте ещё раз\n\n")
 
         else:
             print("Ошибка. Введите выбранную вами опцию используя символы '1' или '2'")
