@@ -1,6 +1,6 @@
 import datetime
 digit = {
-    0: '',
+    0: ['', '', ''],
     1: ['один', 'одной', 'одна'],
     2: ['два', 'двух', 'две'],
     3: ['три', 'трёх', 'три'],
@@ -111,9 +111,13 @@ def main():
         return time_convertor(time_string)
     elif user_choice == '2':
         time_string = input("Пожалуйста введите интересующее вас время в формате 'ЧЧ:ММ'\n:")
-        return time_convertor(time_string)
+        if time_string.split(":")[0].isdigit() and time_string.split(":")[-1].isdigit():
+            return time_convertor(time_string)
+
+        else:
+            return "Вы ввели интересующую вас дату не в формате 'ЧЧ:ММ', попробуйте ещё раз."
     else:
-        print("Ошибка. Введите выбранную вами опцию используя символы '1' или '2'")
+        return "Ошибка. Введите выбранную вами опцию используя символы '1' или '2'"
 
 
 print(main())
