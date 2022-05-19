@@ -33,7 +33,7 @@ else:
     print('Please correct choose working mode.')
     quit()
 
-if 12 < time_hh < 24:
+if 12 < time_hh:
     time_hh -= 12
 
 dict_mm = {1:('одна минута', 'одной минуты'), 2:('две минуты', 'двух минут'), 3:('три минуты', 'трех минут'),
