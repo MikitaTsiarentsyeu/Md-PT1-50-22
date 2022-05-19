@@ -4,8 +4,8 @@ working_mode = input('Please choose working mode: \n enter "c" for choose curren
 
 if working_mode == 'c':
     current_time = datetime.datetime.now()
-    time_hh = int(current_time.hour)
-    time_mm = int(current_time.minute)
+    time_hh = current_time.hour
+    time_mm = current_time.minute
 
 elif working_mode == 'm':
     manual_time = input('Please enter time in format hh:mm - ')
