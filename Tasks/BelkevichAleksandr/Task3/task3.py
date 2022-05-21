@@ -52,7 +52,9 @@ def converter_text_in_lst(lst):
                 lst_word.append(" ")
             else:
                 del lst_word[-1::]
-                lst_lines.append(lst_word)
+                sum_mas_string -= len(x) + 2 # 2 is the two spaces between the last word in the length list
+                correct_line = correct_line_for_len_string(lst_word, sum_mas_string)
+                lst_lines.append(correct_line)
                 lst_word = []
                 sum_mas_string = len(x) + 1
                 lst_word.append(x)
@@ -63,36 +65,7 @@ def converter_text_in_lst(lst):
         #del sum_mas_string
         #del count
 
-    return correct_len_text(lst_lines)
-
-
-def correct_len_text(lst):
-    '''
-    Function to get from array of strings.
-
-    I give list from list and concatenate with a check for the required length.
-
-    Did not do this in a converter_text_in_lst(lst) so as not to increase the amount of code.
-
-    '''
-    
-    lst_corrected_lines = []
-    
-    for line in lst:
-        sum_len_element = 0
-
-        for elemet in line:
-            sum_len_element += len(elemet)
-        
-        if line[-1] == "\n":
-                lst_corrected_lines.append(line)
-        elif sum_len_element < string_len:
-            correct_line = correct_line_for_len_string(line, sum_len_element)
-            lst_corrected_lines.append(correct_line)
-        else:
-            lst_corrected_lines.append(line)
-            
-    return lst_corrected_lines
+    return lst_lines
 
 
 def correct_line_for_len_string(line_from_the_top_function, sum_len):
