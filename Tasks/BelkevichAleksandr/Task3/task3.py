@@ -25,46 +25,42 @@ def converter_text_in_lst(lst):
 
     '''
     lst_lines = []
+    
+    # splitting a string into words
+    mas_line = lst.split(" ")
 
-    # iterating lines from text
-    for elem in lst:
-        # splitting a string into words
-        mas_line = elem.split(" ")
+    lst_word = []
+    sum_mas_string = 0
+    count = 0
 
-        lst_word = []
-        sum_mas_string = 0
-        count = 0
+    # iterating word from lines
+    for word in mas_line:
+        # notation to check string length with word and space
+        sum_mas_string += len(word) + 1
+        # variable to check the last word in the line
+        count += 1
 
-        # iterating word from lines
-        for x in mas_line:
-            # notation to check string length with word and space
-            sum_mas_string += len(x) + 1
-            # variable to check the last word in the line
-            count += 1
+        if sum_mas_string < string_len and count == len(mas_line):
+            lst_word.append(f"{word}\n")
+            lst_lines.append("".join(lst_word))
+        elif sum_mas_string < string_len:
+            lst_word.append(word)
+            lst_word.append(" ")
+        else:
+            del lst_word[-1::]
+            sum_mas_string -= len(word) + 2 # 2 is the two spaces between the last word in the sum_mas_string
+            lst_lines.append(correct_line_for_len_string(lst_word, sum_mas_string))
+            lst_lines.append("\n")
+            lst_word = []
+            sum_mas_string = len(word) + 1
+            lst_word.append(word)
+            lst_word.append(" ")
 
-            if sum_mas_string < string_len and count == len(mas_line):
-                lst_word.append(x)
-                lst_word.append("\n")
-                lst_lines.append(lst_word)
-                lst_word = []
-            elif sum_mas_string < string_len:
-                lst_word.append(x)
-                lst_word.append(" ")
-            else:
-                del lst_word[-1::]
-                sum_mas_string -= len(x) + 2 # 2 is the two spaces between the last word in the length list
-                correct_line = correct_line_for_len_string(lst_word, sum_mas_string)
-                lst_lines.append(correct_line)
-                lst_word = []
-                sum_mas_string = len(x) + 1
-                lst_word.append(x)
-                lst_word.append(" ")
-
-        #Question? I can delete not needed variables here or not
-        #del lst_word
-        #del sum_mas_string
-        #del count
-
+    #Question? I can delete not needed variables here or not
+    #del lst_word
+    #del sum_mas_string
+    #del count
+    
     return lst_lines
 
 
@@ -87,25 +83,21 @@ def correct_line_for_len_string(line_from_the_top_function, sum_len):
             count = 2
         difference_len -= 1
 
-    return line_from_the_top_function
-
+    return "".join(line_from_the_top_function)
 
 lst_text = []
 string_len = selection()
 
 # reading from a file
 with open(r"Tasks/!Tasks/Task3/text.txt", "r", encoding = "utf-8") as f:
-    lst_text = f.read().split("\n")
-
-
-lst_final = converter_text_in_lst(lst_text)
+    for line in f:
+        lst_text.append(converter_text_in_lst(line))
 
 # writing to file
 with open("Tasks/BelkevichAleksandr/Task3/correctedText.txt", "w", encoding="utf-8") as r:
     r.write(f"String length is {string_len} characters \n\n")
 
-    for x in lst_final:
+    for x in lst_text:
         r.write("".join(x))
-        r.write("\n")
 
     print(f"The file is written correctly with the line length {string_len}")
