@@ -42,16 +42,6 @@ def adding_spaces(workline_arr, width):
             workline_arr[i] += ' '
 
 
-def format_residual_line(residual_line, width):
-    while True:
-        if len(residual_line) > 1:
-            for i in range(len(residual_line) - 1):
-                if len(' '.join(residual_line)) >= width:
-                    break
-                residual_line[i] += ' '
-        return ' '.join(residual_line) + '\n'
-
-
 def main():
     width = input_width()
     residual_line = ''
@@ -76,11 +66,7 @@ def main():
 
                 formatted_lines_list.append(formatted_line)
 
-            residual_line = residual_line.split()
-
-            formatted_residual_line = format_residual_line(residual_line, width)
-
-            formatted_lines_list.append(formatted_residual_line)
+            formatted_lines_list.append(residual_line)
 
         out.writelines(formatted_lines_list)
         print('formatted document created')
