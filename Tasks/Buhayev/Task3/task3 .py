@@ -1,24 +1,34 @@
-def input_width():
-    while True:
-        try:
-            width = int(input('Please enter a string width (integer number between 35 and 55)\n:   '))
+import time
+def check_input(func):
+    def wrapper():
+        while True:
             try:
-                assert width > 34
+                string_width = func()
+                time.sleep(.2)
+                try:
+                    assert string_width > 34
+                except:
+                    
+                    print('\nSorry string width is to small\n')
+                    time.sleep(.2)
+                    continue
+
+                try:
+                    assert string_width < 51
+                except:
+                    print('\nSorry string width is to big\n')
+                    time.sleep(.2)
+                    continue
+                return string_width
             except:
-                print('Sorry string width is to small')
+                print('\nSorry invalid input, width must be digit\n')
+                time.sleep(.2)
                 continue
+    return wrapper
 
-            try:
-                assert width < 51
-            except:
-                print('Sorry string width is to big')
-                continue
-
-        except:
-            print('Sorry invalid input')
-            continue
-        return width
-
+@check_input
+def input_string_width():
+    return int(input('Please enter a string width (a digit between 35 and 55)\n:   '))
 
 def split_line(line, width):
     workline, check = line[0:width], line[width]
@@ -43,16 +53,16 @@ def adding_spaces(workline_arr, width):
 
 
 def main():
-    width = input_width()
+    width = input_string_width()
     residual_line = ''
     formatted_lines_list = []
 
     with open('text.txt', 'r') as inp, open('format.txt', 'w') as out:
 
-        for line in inp.readlines():
+        for line in inp:
 
             while True:
-                if len(line) < width:
+                if len(line) <= width:
                     residual_line = line
                     break
 
