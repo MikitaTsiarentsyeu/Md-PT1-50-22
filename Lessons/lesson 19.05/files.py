@@ -1,4 +1,7 @@
-f = open("test.txt", 'w')
+import os
+print(os.getcwd())
+
+f = open("test/test.txt", 'w')
 # print(f)
 f.write("test line number 2")
 f.close()
