@@ -24,12 +24,25 @@ if option == 1:
     t = str(timestamp.hour)+':'+str(timestamp.minute)
 # 2 (or any key) for input from keyboard
 else:
-    while True:#validation that input data is in time range 
-      t = input ('press time in hh:mm format:')
-      if int(t.split(':')[0])<0 or int(t.split(':')[0])>23 or int(t.split(':')[1])<0 or int(t.split(':')[1])>59:
-        print("You should enter TIME in HH:MM F O R M A T:") #talking louder about the format
-      else:
+  t = input ('press time in hh:mm format:')
+  while True:
+    #find :
+    t_t = ':' in t
+    #find length
+    t_len = len(t) 
+    if t_t ==True and t_len == 5 and int(t.split(':')[0])>=0 and int(t.split(':')[0])<=23 and int(t.split(':')[1])>=0 and int(t.split(':')[1])<=59: 
         break
+    #no :
+    elif t_t == False:
+        t = input('Your time should content sigh ":". Please enter time in hh:mm format:')
+    # wrong lenght of string
+    elif t_len != 5:
+        t = input('Enter 5 signs including ":". Please enter time in hh:mm format:')
+    # wrong hours
+    elif int(t.split(':')[0])<0 or int(t.split(':')[0])>23:    
+        t = input('Hours should be between 0 and 23. Please enter time again:')
+    elif int(t.split(':')[1])<0 or int(t.split(':')[1])>59:    
+        t = input('Minutes should be between 0 and 59. Please enter time again:')
     
 hh = int(t.split(':')[0])
 if hh>12:#change 24 format to 12 format
@@ -38,8 +51,13 @@ else:
   hh = hh
 
 mm = int(t.split(':')[1])
-mm1 = int(list (t)[3])
-mm2 = int(list (t)[4])
+
+if len(str(mm)) == 1:
+  mm1 = 0
+  mm2 = mm
+else:
+  mm1 = int(list (t)[3])
+  mm2 = int(list (t)[4])
 
 #for the midnight
 if hh == 0 and mm == 0:
@@ -85,7 +103,9 @@ else:
     minutes = digits_3[mm]
   elif mm > 2 and mm <20:
     minutes = digits[mm]
-  else:
+  elif mm >=20 and mm2!=0:
     minutes = digits_4[mm1] +' '+ digits[mm2]#from two numbers collect one
+  else:
+    minutes = digits_4[mm1]
 
   print (minutes, minute_word, hours_next[hh])
