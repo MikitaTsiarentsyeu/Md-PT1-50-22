@@ -9,7 +9,7 @@ def user_selection():
 
             else:
                 print("The entered number of characters is out of range")
-        except ValueError:
+        except ValueError:          # if num not integer, an exception will be thrown.
             print("The entered value is not a numeric value. Try again\n\n\n")
 
 
@@ -17,11 +17,11 @@ def to_correct_list(line_in_list, num_of_characters):
     """formats into inserted list. Each of which contains a string in the correct form"""
     formatted_list = []
     len_of_elements = 0
-    one_line = []
+    one_line = []     # line before newline
     for word in line_in_list:
         index = 1
         if len_of_elements + len(word) > num_of_characters:
-            del (one_line[-1]) # del last space from list
+            del (one_line[-1])                              # del last space from list
             whole_len = len(''.join(one_line))
             spaces_left = num_of_characters - whole_len
             while spaces_left != 0:
