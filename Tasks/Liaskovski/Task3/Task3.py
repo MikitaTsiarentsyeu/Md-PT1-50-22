@@ -11,27 +11,29 @@ while True:
     except ValueError:
         print("Please, use numbers")
 
-path_to_file = 'text.txt'
+with open('text.txt','r', encoding= 'utf-8') as t:
+    input_string = t.read()
+    lim = num
+    for s in input_string.split("\n"):
+        if s == "": print
+        w=0 
+        l = []
+    
+        for d in s.split():
+            if w + len(d) + 1 <= lim:
+                l.append(d)
+                w += len(d) + 1 
+            else:
+                print (" ".join(l))
+                l = [d] 
+                w = len(d)
+        if (len(l)): print (" ".join(l) )
 
-with open("text.txt", "r", encoding= 'utf-8') as text:
-    def read(text_file: str, line_length: int = num):
-        with open(text_file, 'r', encoding= 'utf-8') as text:
-            line = None
-            while line != '':
-                line = text.read(line_length)
-                yield line
+        with open("newtext.txt","w") as r:
+            for l in input_string.split():
+                r.write(" ".join(l))
+                r.write("\n")
+        
 
-    def print_by_width(text_file, line_length):    
-        for row in read(text_file, line_length):
-            print(row)
-        return
-    print_by_width(path_to_file, num)
 
-file1 = open("text.txt")
-file2 = open("newtext.txt", "w")
-
-file2.write(file1.read())
-file1.close()
-file2.close()
-
-print(f"New file successfully created  with {num} characters")
+    print(f"The new file successfully created  with {num} characters")
