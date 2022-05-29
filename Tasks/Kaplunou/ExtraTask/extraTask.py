@@ -27,4 +27,4 @@ even=[]
 for u in b:
     if u%2==0:
         even.append(u)
-print(even)
+print(sum(even))
