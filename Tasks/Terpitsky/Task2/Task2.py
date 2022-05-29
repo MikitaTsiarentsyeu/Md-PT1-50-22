@@ -68,7 +68,6 @@ while True:
         for i in hours_dict:
             if hours_time == i[0] or hours_time == i[1]:
                 hours_final = hours_dict[i][1]
-        #min
     if min_time > 44:
         for i in hours_dict:
             if hours_time == i[0]:
@@ -96,8 +95,7 @@ while True:
         for i in min_dict:
             if min_time == i and min_time < 16:
                 min_final = min_dict[i][0]
-                break
-            else:
+            elif min_time == i and min_time in range(16, 20):
                 min_final = min_dict[i]
     if min_time > 19 and min_time < 45 and min_time != 30:
         for i in min_dict_twent:
@@ -143,11 +141,11 @@ while True:
     if min_time in range(1, 30) or min_time in range(31, 60):
         print(f'Время сейчас: {min_final} {min_word} {hours_final}, {day_night_word}')
     elif min_time == 0:
-        print(f'{hours_final} {hours_word} {min_final}, {day_night_word}')
+        print(f'Время сейчас: {hours_final} {hours_word} {min_final}, {day_night_word}')
     elif min_time == 30:
-        print(f'{min_final} {hours_final}, {day_night_word}')
-    flag = int(input(f'Еще раз провернем это? введи 1 - для повтора, любой символ для выхода из программы]:'))
-    if flag != 1:
+        print(f'Время сейчас: {min_final} {hours_final}, {day_night_word}')
+    flag = input(f'Еще раз провернем это? введи 1 - для повтора, любой символ для выхода из программы]:')
+    if flag != "1":
         break
 
 
