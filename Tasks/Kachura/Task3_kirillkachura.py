@@ -1,3 +1,6 @@
+from ast import Break, Continue
+
+
 def spaces (x):
     if len(x) <= str_length:
         x = x.replace(' ', '  ', str_length - len(x))
@@ -12,22 +15,23 @@ def spaces (x):
     return x
 
 
-str_length = input('Enter target string length (number 36+): ')
-input_check = 0
-while input_check == 0:
-    try:
-        int(str_length)
-        input_check = 1
-    except ValueError:
-        str_length = input('enter digit, please ')
-        input_check = 0
-    else:
-        str_length = int(str_length)
-
-if str_length <=35:
-    print('string length set to minimum (36 symbols)')
-    str_length = 36
     
+while True:
+    
+    str_length = input('Enter target string length (number 36+): ')
+
+    if not str_length.isdigit():
+        print ('enter digit please')
+        continue
+    
+    str_length = int(str_length)
+        
+    if str_length <=35:
+        print('string length is less than minimum (36 symbols)')
+        continue
+        
+    break
+
 
 with open('new_text.txt', 'w') as f_new:
     with open('text.txt', 'r') as f:
@@ -42,7 +46,7 @@ with open('new_text.txt', 'w') as f_new:
             y = f.read(1)
             temp_x = ''
             
-            if x == '':
+            if not x:
                 break
             
             if x.find('\n') != -1:
