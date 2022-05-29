@@ -1,7 +1,5 @@
 import datetime
 
-current_date_time = datetime.datetime.now()
-curent_time = current_date_time.strftime('%H:%M')
 hours_dict = {(1,13):("час","первого"), (2, 14):('два',"второго"), (3,15):('три',"третьего"), (4,16):("четыре","четвертого"), (5,17):("пять","пятого"), 
 (6,18):("шесть","шестого"), (7,19):("семь", "седьмого"), (8,20):("восемь", "восьмого"), (9,21):("девять", "девятого"), (10,22):("десять", "десятого"), 
 (11,23):("одинадцать", "одинадцатого"), (12,0):("двенадцать", "двенадцатого"), (24,24):("двенадцать", "двенадцатого")}
@@ -36,6 +34,8 @@ while True:
                     continue
                 break
         if choise == 1:
+            current_date_time = datetime.datetime.now()
+            curent_time = current_date_time.strftime('%H:%M')
             time_input = curent_time
             print(time_input)
         time_input_list = time_input.split(":")
