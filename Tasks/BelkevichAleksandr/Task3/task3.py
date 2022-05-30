@@ -90,7 +90,10 @@ string_len = selection()
 
 # reading from a file
 with open(r"Tasks/!Tasks/Task3/text.txt", "r", encoding = "utf-8") as f:
-    for line in f:
+    while 1 :
+        line = f.readline()
+        if not line:
+            break
         lst_text.append(converter_text_in_lst(line))
 
 # writing to file
