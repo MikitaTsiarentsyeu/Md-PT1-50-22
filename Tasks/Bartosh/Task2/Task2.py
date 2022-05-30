@@ -26,14 +26,12 @@ if option == 1:
 else:
   t = input ('press time in hh:mm format:')
   while True:
-    #find :
-    t_t = ':' in t
-    #find length
+  #find length
     t_len = len(t) 
-    if t_t ==True and t_len == 5 and int(t.split(':')[0])>=0 and int(t.split(':')[0])<=23 and int(t.split(':')[1])>=0 and int(t.split(':')[1])<=59: 
+    if (':' in t) ==True and t_len == 5 and int(t.split(':')[0])>=0 and int(t.split(':')[0])<=23 and int(t.split(':')[1])>=0 and int(t.split(':')[1])<=59: 
         break
     #no :
-    elif t_t == False:
+    elif (':' in t) == False:
         t = input('Your time should content sigh ":". Please enter time in hh:mm format:')
     # wrong lenght of string
     elif t_len != 5:
