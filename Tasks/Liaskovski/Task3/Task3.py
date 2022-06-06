@@ -10,30 +10,30 @@ while True:
             print("Out of the range, please try again")
     except ValueError:
         print("Please, use numbers")
-
-with open('text.txt','r', encoding= 'utf-8') as t:
-    input_string = t.read()
-    lim = num
-    for s in input_string.split("\n"):
-        if s == "": print
-        w=0 
-        l = []
+lim = num
+def just(input_string: str, lim: int):
     
-        for d in s.split():
-            if w + len(d) + 1 <= lim:
-                l.append(d)
-                w += len(d) + 1 
-            else:
-                print (" ".join(l))
-                l = [d] 
-                w = len(d)
-        if (len(l)): print (" ".join(l) )
+    s = input_string       
+    l = []
+    w=0             
+    for d in s.split():
+        if w + len(d) + 1 <= lim:
+            l.append(d)
+            w += len(d) + 1  
+                                             
+        else:
+            print (" ".join(l))
+            l = [d] 
+            w = len(d)
 
-        with open("newtext.txt","w") as r:
-            for l in input_string.split():
-                r.write(" ".join(l))
-                r.write("\n")
-        
+    if (len(l)): print (" ".join(l))    
+    return " ".join(l)
+   # I have a question. How can I return the entire function in my result, not just the last iteration (the last line of text) and write it in the new file?
+with open('text.txt', 'r', encoding= 'utf-8') as old:
+    input_string = old.read() 
+    n = just(input_string, lim)
 
+with open('newtext.txt', 'a') as new:
+    new.write(n)
 
-    print(f"The new file successfully created  with {num} characters")
+print(f"The new file successfully created  with {lim} characters")
