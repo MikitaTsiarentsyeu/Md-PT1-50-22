@@ -11,29 +11,31 @@ while True:
     except ValueError:
         print("Please, use numbers")
 lim = num
-def just(input_string: str, lim: int):
-    
-    s = input_string       
-    l = []
-    w=0             
-    for d in s.split():
-        if w + len(d) + 1 <= lim:
-            l.append(d)
-            w += len(d) + 1  
-                                             
-        else:
-            print (" ".join(l))
-            l = [d] 
-            w = len(d)
-
-    if (len(l)): print (" ".join(l))    
-    return " ".join(l)
-   # I have a question. How can I return the entire function in my result, not just the last iteration (the last line of text) and write it in the new file?
 with open('text.txt', 'r', encoding= 'utf-8') as old:
-    input_string = old.read() 
-    n = just(input_string, lim)
+    s = old.read() 
 
-with open('newtext.txt', 'a') as new:
-    new.write(n)
-
-print(f"The new file successfully created  with {lim} characters")
+s=s.replace("\n", "")
+last_position=len(s)-1
+ 
+split_len= num
+list_of_records=[]
+start=0
+ 
+while True:
+    end=start+split_len+1 # +1=allow for space=next character
+    rec=s[start:end].strip()
+    ctr = -1       
+    if end < last_position:
+        ## look for space from right to left
+        while rec[ctr] != " ":     ## assumes space, or more than one word here
+            ctr -= 1
+ 
+        list_of_records.append(rec[:ctr].strip())
+        start += len(rec[:ctr])+1     ## +1 = skip space
+    else:   ## end of file reached
+        list_of_records.append(s[start:].strip())
+        break
+with open('newtext.txt', 'w', encoding='utf-8') as new:
+    new.write("\n".join(list_of_records))
+    
+print(f"The new file successfully created  with {num} characters")
