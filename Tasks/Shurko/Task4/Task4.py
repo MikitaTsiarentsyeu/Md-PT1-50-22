@@ -18,21 +18,18 @@ def is_prime(num: int):
     
 #print(is_prime(11))
 
-#list_ = [0, 1, 2, 3, 4, 7, 8, 10]
-
-
-
 
 l = [0, 1, 2, 3, 4, 7, 8, 10]
 #l = [4,7,10]
 #l = [2, 3, 8, 9]
-def get_range(l: list):  # This part of task4 in progress
+def get_range(l: list):  
     my_srt = ""
     new = list()
     new.append(l[0])
     i = 1
     j = 0
     change = False
+    f_str = ''
     while i < len(l):
         if (l[i]-1) == l[i-1]:
             new[j+1:j+3] =[l[i]]
@@ -48,7 +45,7 @@ def get_range(l: list):  # This part of task4 in progress
         i +=1
     if change == True:
         new.insert(j+1, '-')
-    print(new)
-    my_srt = [str(n) for n in new]
+    my_srt = str(new)
+    my_srt=my_srt.replace(", '-', ", "-")
     return my_srt
 print(get_range(l))
