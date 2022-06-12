@@ -1,6 +1,3 @@
-from math import sqrt
-
-
 def sum_element(lst):
     sum = 0
     for x in lst:
