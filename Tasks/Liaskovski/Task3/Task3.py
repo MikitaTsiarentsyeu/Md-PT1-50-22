@@ -10,30 +10,32 @@ while True:
             print("Out of the range, please try again")
     except ValueError:
         print("Please, use numbers")
+lim = num
+with open('text.txt', 'r', encoding= 'utf-8') as old:
+    s = old.read() 
 
-with open('text.txt','r', encoding= 'utf-8') as t:
-    input_string = t.read()
-    lim = num
-    for s in input_string.split("\n"):
-        if s == "": print
-        w=0 
-        l = []
+s=s.replace("\n", "")
+last_position=len(s)-1
+ 
+split_len= num
+list_of_records=[]
+start=0
+ 
+while True:
+    end=start+split_len+1 # +1=allow for space=next character
+    rec=s[start:end].strip()
+    ctr = -1       
+    if end < last_position:
+        ## look for space from right to left
+        while rec[ctr] != " ":     ## assumes space, or more than one word here
+            ctr -= 1
+ 
+        list_of_records.append(rec[:ctr].strip())
+        start += len(rec[:ctr])+1     ## +1 = skip space
+    else:   ## end of file reached
+        list_of_records.append(s[start:].strip())
+        break
+with open('newtext.txt', 'w', encoding='utf-8') as new:
+    new.write("\n".join(list_of_records))
     
-        for d in s.split():
-            if w + len(d) + 1 <= lim:
-                l.append(d)
-                w += len(d) + 1 
-            else:
-                print (" ".join(l))
-                l = [d] 
-                w = len(d)
-        if (len(l)): print (" ".join(l) )
-
-        with open("newtext.txt","w") as r:
-            for l in input_string.split():
-                r.write(" ".join(l))
-                r.write("\n")
-        
-
-
-    print(f"The new file successfully created  with {num} characters")
+print(f"The new file successfully created  with {num} characters")
