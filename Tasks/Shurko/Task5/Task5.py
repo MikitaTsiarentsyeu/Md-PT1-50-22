@@ -19,21 +19,10 @@ l = [0, 1]
 def fibonacci(n):
     global l, i
     if n == 2:
-        return l
+        return print(l)
     else:
         x = l[i] + l[i+1]
         l.append(x)
         i +=1
     return fibonacci(n-1)    
-fibonacci(5)
-print(l)
-
-    
-
-
-
-
-
-
-
-
+fibonacci(10)
