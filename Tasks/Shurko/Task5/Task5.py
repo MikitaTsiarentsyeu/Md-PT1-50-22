@@ -25,3 +25,18 @@ def fibonacci(n):
         i +=1
     return fibonacci(n-1)    
 fibonacci(10)
+
+############# --- May be this version better? --- ################
+def fibonacci(n):
+    i = 0 
+    l = [0, 1]
+    def fib(n):
+        nonlocal i, l
+        if n == 2:
+            return l
+        else:
+            l.append(l[i] + l[i+1])
+            i +=1
+        return fib(n-1)
+    print(fib(n))
+fibonacci(8)
