@@ -21,8 +21,7 @@ def fibonacci(n):
     if n == 2:
         return print(l)
     else:
-        x = l[i] + l[i+1]
-        l.append(x)
+        l.append(l[i] + l[i+1])
         i +=1
     return fibonacci(n-1)    
 fibonacci(10)
