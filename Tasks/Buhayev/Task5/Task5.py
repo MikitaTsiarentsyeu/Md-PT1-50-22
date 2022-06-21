@@ -2,7 +2,7 @@
 l=[1, 2, [2, 4, [[7, 8], 4, 6]]]
 
 def rsum(arr):
-    if type(arr) != list:
+    if not isinstance(arr, list):
         return arr
     if arr == []:
         return 0
@@ -16,12 +16,11 @@ rec = lambda x: sum(map(rec, x)) if isinstance(x, list) else x #some interesting
 print(rec(l))
 
 
-def wrap_func(N):
-    def fib(N):
-        if N == 0: return 0
-        if N == 1: return 1
-        return fib(N - 1) + fib(N - 2)
-    print(*[fib(i) for i in range(N)], sep=', ')
+
+def fib(N):
+    if N < 2: return N
+    return fib(N - 1) + fib(N - 2)
     
-wrap_func(10)
+    
+print(*[fib(i) for i in range(10)], sep=', ')
     
