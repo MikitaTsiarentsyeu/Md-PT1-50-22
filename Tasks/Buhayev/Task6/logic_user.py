@@ -74,7 +74,7 @@ class User():
         
         if self.db.cart:
             self.db.buy_items()
-            print(f'Your order {self.db.name}:\n{self.db.order}')
+            print(f'Your order, {self.db.name}:\n{self.db.order}')
         else:
             print('sorry, your cart is empty')
         

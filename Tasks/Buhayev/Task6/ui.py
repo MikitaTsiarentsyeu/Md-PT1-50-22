@@ -59,8 +59,6 @@ class UI:
     def bot_help(self):
         print(f'Ok, {self.user.show_name()}, what you search?')
         category = self.choose_category_bot()
-        print(f'Great job, {self.user.show_name()}, this is all products of category(ies): {" ".join(category)}:')
-        self.user.search_items('category', *category)
         self.range_price('category', *category)
         print('Ok, at last you can shoose product what you want and add in to cart =)')
         id = self.split_array_of_items("id's", 'id')
@@ -69,16 +67,20 @@ class UI:
         self.finish_order()
 
     def split_array_of_items(self, cat_str, category):
-        inp = self.small_input(f'please enter interesting {cat_str} (separator ",")').split(',')
-        if category == 'id':
-            in_inp = [int(i) for i in inp if self.user.is_in_data(category, int(i))]
-            not_inp = [i.strip() for i in inp if not self.user.is_in_data(category, int(i))]
-        else:
-            in_inp = [i.strip() for i in inp if self.user.is_in_data(category, i.strip())]
-            not_inp = [i.strip() for i in inp if not self.user.is_in_data(category, i.strip())]
-        if not_inp:
-            print(f'sorry, but we cannot find this items: {" ".join(not_inp)}')
-        return in_inp
+        try:
+            inp = self.small_input(f'please enter interesting {cat_str} (separator ",")').split(',')
+            if category == 'id':
+                in_inp = [int(i) for i in inp if self.user.is_in_data(category, int(i))]
+                not_inp = [i.strip() for i in inp if not self.user.is_in_data(category, int(i))]
+            else:
+                in_inp = [i.strip() for i in inp if self.user.is_in_data(category, i.strip())]
+                not_inp = [i.strip() for i in inp if not self.user.is_in_data(category, i.strip())]
+            if not_inp:
+                print(f'sorry, but we cannot find this items: {" ".join(not_inp)}')
+            return in_inp
+        except ValueError:
+            print('sorry you enter invalid value for category')
+            return self.split_array_of_items(cat_str, category)
 
 
     def small_input(self, mes):
@@ -90,7 +92,7 @@ class UI:
             return int(self.small_input(f'Your choice: {str}'))
         except:
             print('Sorry, number is incorrect, please try again')
-            self.check_number(str)
+            return self.check_number(str)
 
     def check_main_choice(self):
         try:
@@ -194,7 +196,7 @@ class UI:
                 return it
         except ValueError:
             print('Sorry, we cannot find that item, maybe you want to find something else?')
-            self.search_item(category)
+            return self.search_item(category)
 
     def add_item_to_cart(self):
         check = self.answer('string', 'Do you want to add some item to the cart?')()
@@ -232,8 +234,17 @@ class UI:
                 self.default_show()
 
     def choose_category_bot(self):
-            self.user.show_all_categories()
-            return self.split_array_of_items('categories', 'category')
+        self.user.show_all_categories()
+        try:
+            category = self.split_array_of_items('categories', 'category')
+            if category:
+                print(f'Great job, {self.user.show_name()}, this is all products of category(ies): {" ".join(category)}:')
+                self.user.search_items('category', *category)
+                return category
+            raise ValueError
+        except ValueError:
+            print('sorry, we can not find any category')
+            return self.choose_category_bot()
 
     def goodbye(self):
         print("Thank you for your time! come back again")
