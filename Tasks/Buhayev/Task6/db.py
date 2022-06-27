@@ -51,16 +51,12 @@ class Base():
     @attrib_not_found
     def get_items(self, key, *args):
         return self.df.loc[self.df[key].isin(args)]
-    #---#
+
     @attrib_not_found
     def search_items(self,key,*args):
         return self.df.loc[self.df[key].isin(args)][['id','category','name','price']].to_string(index=False)
 
-    @attrib_not_found
-    def test_search_items(self, key, *args):
-        print(args)
-        print(self.get_items(key, *args).empty)
-        return self.df.loc[self.df[key].isin(args)][['id', 'category', 'name', 'price']].to_string(index=False)
+    
 
     @attrib_not_found
     def show_all_data(self):
@@ -89,7 +85,6 @@ class Base():
     @attrib_not_found
     def choose_item(self, *id):
         items = self.get_items('id', *id).values.tolist()
-
         [self.cart.append({'id':i[0], 'category':i[1], 'name':i[2], 'price':i[3] }) for i in items]
         
 

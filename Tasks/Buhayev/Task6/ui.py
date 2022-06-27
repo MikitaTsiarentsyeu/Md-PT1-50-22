@@ -88,7 +88,6 @@ class UI:
     def check_number(self, str):
         try:
             return int(self.small_input(f'Your choice: {str}'))
-
         except:
             print('Sorry, number is incorrect, please try again')
             self.check_number(str)

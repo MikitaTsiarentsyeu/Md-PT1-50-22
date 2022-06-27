@@ -41,7 +41,6 @@ class User():
     def search_items(self, key, *args):
         if not self.db.get_items(key,*args).empty:
             print(self.db.search_items(key, *args))
-
         else:
             raise ValueError
 
@@ -55,11 +54,9 @@ class User():
         print(f'item with id {id} adding to cart')
         self.db.choose_item(*id)
 
-
     def show_all_id(self):
          return self.db.show_all_id()
-        
-        
+                
     def delete_from_cart(self, id): 
         for i in self.db.cart:
             if i['id'] == id:
@@ -69,12 +66,9 @@ class User():
                 return ''
             else: raise ValueError
             
-                    
-        
     def show_cart(self):
         print('in cart:\n')
         [print(f'id - {i["id"]}; name - {i["name"]}; price-{i["price"]}\n') for i in self.db.cart]
-
 
     def buy_items(self):
         
@@ -83,7 +77,6 @@ class User():
             print(f'Your order {self.db.name}:\n{self.db.order}')
         else:
             print('sorry, your cart is empty')
-
         
     def clear_cart(self):
         self.db.cart = []
