@@ -1,0 +1,83 @@
+h1 { 
+    color: red;
+    background-color: darkgoldenrod;
+}
+
+h2 { 
+    color: red;
+}
+
+p { 
+    color: blue;
+}
+
+p:hover { 
+    color:cornflowerblue;
+}
+
+#very_important_h1 {
+    background-color:rgb(0, 255, 255);
+}
+
+.huge_text {
+    font-size: 96px;
+    background-color:darkcyan;
+}
+
+.headline {
+    background-color:fuchsia;
+}
+
+#header {
+    background-color: aqua;
+    height: 140px;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+#content {
+    background-color: brown;
+    display: flex;
+}
+
+#footer {
+    background-color: darkgreen;
+}
+
+#footer-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#footer-title {
+    margin: 10px;
+    padding-top: 20px;
+    padding-left: 10%;
+    margin-top: 0;
+}
+
+#content-left {
+    background-color: darkorchid;
+    width: 15%;
+}
+
+#content-center {
+    background-color: darkslategray;
+    width: 70%;
+}
+
+#content-right {
+    background-color: hotpink;
+    width: 15%;
+}
+
+.content-padded {
+    padding-left: 5%;
+}
+
+.content-input {
+    width: 80%;
+}
