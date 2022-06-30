@@ -30,10 +30,12 @@ def show_cart():
 
 def remove_from_cart(num):  #in progress
     num = int(num)
-    print(f"remove  {num}")
+    car_data.remove_from_cart(num)
 
 def new_oder():
-    print("This fuction make oder")
+    if car_data.create_oder() == True:
+        return f"Oder was created in oder.json"
+    
 
 
 

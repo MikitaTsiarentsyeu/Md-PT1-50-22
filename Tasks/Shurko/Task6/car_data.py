@@ -1,5 +1,4 @@
-
-
+import json
 mark = "Mercedes-Benz"
 clas = ['A', 'B', 'C', 'E', 'S', 'GLC', 'GLE', 'GLS', 'G'] 
 body = ["Sedan", "Saloon", "Pickup", "2/3 doors"]        
@@ -8,7 +7,7 @@ getribe = ["Automatic", "Manual"]
 drive = ["RWD", "AWD", "FWD"]
 header = "    Mark         Class  Boby type   Fuel  Getribe   Drive\n"
 cart = []                                  
-
+oder= {}
 
 car =  {
         0: (mark, clas[0], body[3], fuel[2], getribe[0], drive[2]),
@@ -45,10 +44,28 @@ def add_to_cart(num):
 
 def show_cart():
     return {key: val for key, val in car.items() if key in cart}.items()
- 
-    
 
+def remove_from_cart(num):
+    if num in cart:
+        cart.remove(num)
 
+# cart.append(1)  
+# cart.append(2) 
   
+
+def create_oder():
+    res = {key: val for key, val in car.items() if key in cart}
+    with open ("oder.json", 'w') as f:
+        json.dump(res, f)
+    global cart
+    cart = []
+    return True
+    
+   
+
+# print(create_oder())
+# print(cart)
+
+
 
 

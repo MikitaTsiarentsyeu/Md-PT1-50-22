@@ -1,6 +1,6 @@
 import car_bl
 
-cart_not_empty = False
+oder = False
 
 def print_all():
     print(car_bl.get_all_cars())
@@ -14,14 +14,17 @@ def check_choice(num):
 def add_to_cart(num):
     print(car_bl.add_to_cart(num))
 
-def in_cart(): # in progress
+def in_cart():
     while True:
         action = input("To make oder tap O OR number for remove OR any key to continue ")
         if action == 'O':
-            car_bl.new_oder()
+            print(car_bl.new_oder()) 
+            global oder
+            oder = True
             break
-        elif action.isdigit() == True:              #in progress
-                car_bl.remove_from_cart(action) 
+        elif action.isdigit() == True:              
+                car_bl.remove_from_cart(action)
+                print(car_bl.show_cart())
         else: break
 
 def show_cart():
@@ -30,7 +33,7 @@ def show_cart():
     else: print(car_bl.show_cart()), in_cart()
 
 def main_flow():
-    while True:
+    while oder == False:
             print("\nA: Will show all car in store; exit: to exit; cart to see cart")
             print("Select fuel: D for diesel, P for petrol, E for electro OR Select getribe: A for automatic or M for manual")
             action = input("Numbers for selection in the catalog \n")
