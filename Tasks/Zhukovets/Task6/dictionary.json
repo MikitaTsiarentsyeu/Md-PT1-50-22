@@ -1,0 +1,620 @@
+{
+    "1": {
+        "Word": "Abate",
+        "Translate": "Уменьшать",
+        "Context": null,
+        "Type": null
+    },
+    "2": {
+        "Word": "Abjure",
+        "Translate": "Отказываться",
+        "Context": null,
+        "Type": null
+    },
+    "3": {
+        "Word": "Ambidextrous",
+        "Translate": "Владеющий Двумя Руками",
+        "Context": null,
+        "Type": null
+    },
+    "4": {
+        "Word": "Aphoristic",
+        "Translate": "Афористичный",
+        "Context": null,
+        "Type": null
+    },
+    "5": {
+        "Word": "Augury",
+        "Translate": "Предсказание",
+        "Context": null,
+        "Type": null
+    },
+    "6": {
+        "Word": "Avaricious",
+        "Translate": "Алчный",
+        "Context": null,
+        "Type": null
+    },
+    "7": {
+        "Word": "Blandishment",
+        "Translate": "Уговаривание",
+        "Context": null,
+        "Type": null
+    },
+    "8": {
+        "Word": "Boor",
+        "Translate": "Грубиян",
+        "Context": null,
+        "Type": null
+    },
+    "9": {
+        "Word": "Canonical",
+        "Translate": "Уставной",
+        "Context": null,
+        "Type": null
+    },
+    "10": {
+        "Word": "Cardinal",
+        "Translate": "Важнейший",
+        "Context": null,
+        "Type": null
+    },
+    "11": {
+        "Word": "Colander",
+        "Translate": "Дуршлаг",
+        "Context": null,
+        "Type": null
+    },
+    "12": {
+        "Word": "Commensurate",
+        "Translate": "Соответственный",
+        "Context": null,
+        "Type": null
+    },
+    "13": {
+        "Word": "Culpability",
+        "Translate": "Виновность",
+        "Context": null,
+        "Type": null
+    },
+    "14": {
+        "Word": "Cumbersome",
+        "Translate": "Громоздкий",
+        "Context": null,
+        "Type": null
+    },
+    "15": {
+        "Word": "Dangle",
+        "Translate": "Болтаться",
+        "Context": null,
+        "Type": null
+    },
+    "16": {
+        "Word": "Dearth",
+        "Translate": "Дефицит",
+        "Context": null,
+        "Type": null
+    },
+    "17": {
+        "Word": "Deference",
+        "Translate": "Уважение",
+        "Context": null,
+        "Type": null
+    },
+    "18": {
+        "Word": "Deliberate",
+        "Translate": "Преднамеренный",
+        "Context": null,
+        "Type": null
+    },
+    "19": {
+        "Word": "Delineate",
+        "Translate": "Набрасывать",
+        "Context": null,
+        "Type": null
+    },
+    "20": {
+        "Word": "Derogatory",
+        "Translate": "Унизительный",
+        "Context": null,
+        "Type": null
+    },
+    "21": {
+        "Word": "Dexterity",
+        "Translate": "Ловкость",
+        "Context": null,
+        "Type": null
+    },
+    "22": {
+        "Word": "Diaphanous",
+        "Translate": "Прозрачный",
+        "Context": null,
+        "Type": null
+    },
+    "23": {
+        "Word": "Diligent",
+        "Translate": "Старательный",
+        "Context": null,
+        "Type": null
+    },
+    "24": {
+        "Word": "Discernment",
+        "Translate": "Проницательность",
+        "Context": null,
+        "Type": null
+    },
+    "25": {
+        "Word": "Disparage",
+        "Translate": "Унижать Достоинство",
+        "Context": null,
+        "Type": null
+    },
+    "26": {
+        "Word": "Dispatch",
+        "Translate": "Отправление",
+        "Context": null,
+        "Type": null
+    },
+    "27": {
+        "Word": "Docile",
+        "Translate": "Восприимчивый",
+        "Context": null,
+        "Type": null
+    },
+    "28": {
+        "Word": "Doleful",
+        "Translate": "Скорбный",
+        "Context": null,
+        "Type": null
+    },
+    "29": {
+        "Word": "Dormant",
+        "Translate": "Дремлющий",
+        "Context": null,
+        "Type": null
+    },
+    "30": {
+        "Word": "Drought",
+        "Translate": "Засуха",
+        "Context": null,
+        "Type": null
+    },
+    "31": {
+        "Word": "Encomium",
+        "Translate": "Восхваление",
+        "Context": null,
+        "Type": null
+    },
+    "32": {
+        "Word": "Epistemology",
+        "Translate": "Теория Познания",
+        "Context": null,
+        "Type": null
+    },
+    "33": {
+        "Word": "Equivocation",
+        "Translate": "Уклонение",
+        "Context": null,
+        "Type": null
+    },
+    "34": {
+        "Word": "Extant",
+        "Translate": "Сохранившийся",
+        "Context": null,
+        "Type": null
+    },
+    "35": {
+        "Word": "Extirpate",
+        "Translate": "Вырывать С Корнем",
+        "Context": null,
+        "Type": null
+    },
+    "36": {
+        "Word": "Feckless",
+        "Translate": "Беспомощный",
+        "Context": null,
+        "Type": null
+    },
+    "37": {
+        "Word": "Froward",
+        "Translate": "Своевольный",
+        "Context": null,
+        "Type": null
+    },
+    "38": {
+        "Word": "Glib",
+        "Translate": "Свободный",
+        "Context": null,
+        "Type": null
+    },
+    "39": {
+        "Word": "Halcyon",
+        "Translate": "Безмятежный",
+        "Context": null,
+        "Type": null
+    },
+    "40": {
+        "Word": "Imperturbability",
+        "Translate": "Невозмутимость",
+        "Context": null,
+        "Type": null
+    },
+    "41": {
+        "Word": "Impugned",
+        "Translate": "Опровергнутый",
+        "Context": null,
+        "Type": null
+    },
+    "42": {
+        "Word": "Incise",
+        "Translate": "Надрезать",
+        "Context": null,
+        "Type": null
+    },
+    "43": {
+        "Word": "Inveigle",
+        "Translate": "Заманивать",
+        "Context": null,
+        "Type": null
+    },
+    "44": {
+        "Word": "Maudlin",
+        "Translate": "Плаксивый",
+        "Context": null,
+        "Type": null
+    },
+    "45": {
+        "Word": "Meretricious",
+        "Translate": "Распутный",
+        "Context": null,
+        "Type": null
+    },
+    "46": {
+        "Word": "Minatory",
+        "Translate": "Угрожающий",
+        "Context": null,
+        "Type": null
+    },
+    "47": {
+        "Word": "Moralistic",
+        "Translate": "Поучающий",
+        "Context": null,
+        "Type": null
+    },
+    "48": {
+        "Word": "Ossified",
+        "Translate": "Окостеневший",
+        "Context": null,
+        "Type": null
+    },
+    "49": {
+        "Word": "Ostracism",
+        "Translate": "Гонение",
+        "Context": null,
+        "Type": null
+    },
+    "50": {
+        "Word": "Parsimonious",
+        "Translate": "Бережливый",
+        "Context": null,
+        "Type": null
+    },
+    "51": {
+        "Word": "Pejorative",
+        "Translate": "Уничижительный",
+        "Context": null,
+        "Type": null
+    },
+    "52": {
+        "Word": "Penchant",
+        "Translate": "Склонность",
+        "Context": null,
+        "Type": null
+    },
+    "53": {
+        "Word": "Perch",
+        "Translate": "Жердочка Для Птиц",
+        "Context": null,
+        "Type": null
+    },
+    "54": {
+        "Word": "Pervade",
+        "Translate": "Заполнять",
+        "Context": null,
+        "Type": null
+    },
+    "55": {
+        "Word": "Petulant",
+        "Translate": "Нетерпеливый",
+        "Context": null,
+        "Type": null
+    },
+    "56": {
+        "Word": "Philanthropy",
+        "Translate": "Благотворительность",
+        "Context": null,
+        "Type": null
+    },
+    "57": {
+        "Word": "Philistine",
+        "Translate": "Обыватель",
+        "Context": null,
+        "Type": null
+    },
+    "58": {
+        "Word": "Pillage",
+        "Translate": "Мародерство",
+        "Context": null,
+        "Type": null
+    },
+    "59": {
+        "Word": "Plumb",
+        "Translate": "Явный",
+        "Context": null,
+        "Type": null
+    },
+    "60": {
+        "Word": "Ponderous",
+        "Translate": "Тяжеловесный",
+        "Context": null,
+        "Type": null
+    },
+    "61": {
+        "Word": "Postulate",
+        "Translate": "Аксиома",
+        "Context": null,
+        "Type": null
+    },
+    "62": {
+        "Word": "Precipitous",
+        "Translate": "Обрывистый",
+        "Context": null,
+        "Type": null
+    },
+    "63": {
+        "Word": "Precursor",
+        "Translate": "Предшественник",
+        "Context": null,
+        "Type": null
+    },
+    "64": {
+        "Word": "Presumptuous",
+        "Translate": "Самонадеянный",
+        "Context": null,
+        "Type": null
+    },
+    "65": {
+        "Word": "Prevail",
+        "Translate": "Восторжествовать",
+        "Context": null,
+        "Type": null
+    },
+    "66": {
+        "Word": "Probity",
+        "Translate": "Честность",
+        "Context": null,
+        "Type": null
+    },
+    "67": {
+        "Word": "Prodigious",
+        "Translate": "Чрезмерный",
+        "Context": null,
+        "Type": null
+    },
+    "68": {
+        "Word": "Prodigy",
+        "Translate": "Одаренный Человек",
+        "Context": null,
+        "Type": null
+    },
+    "69": {
+        "Word": "Proliferate",
+        "Translate": "Распространяться",
+        "Context": null,
+        "Type": null
+    },
+    "70": {
+        "Word": "Prolific",
+        "Translate": "Плодородный",
+        "Context": null,
+        "Type": null
+    },
+    "71": {
+        "Word": "Proprietary",
+        "Translate": "Собственнический",
+        "Context": null,
+        "Type": null
+    },
+    "72": {
+        "Word": "Provident",
+        "Translate": "Предвидящий",
+        "Context": null,
+        "Type": null
+    },
+    "73": {
+        "Word": "Proximity",
+        "Translate": "Близость",
+        "Context": null,
+        "Type": null
+    },
+    "74": {
+        "Word": "Prudent",
+        "Translate": "Благоразумный",
+        "Context": null,
+        "Type": null
+    },
+    "75": {
+        "Word": "Quintessential",
+        "Translate": "Наиболее Типичный",
+        "Context": null,
+        "Type": null
+    },
+    "76": {
+        "Word": "Raconteur",
+        "Translate": "Рассказчик",
+        "Context": null,
+        "Type": null
+    },
+    "77": {
+        "Word": "Rarefy",
+        "Translate": "Разжижаться",
+        "Context": null,
+        "Type": null
+    },
+    "78": {
+        "Word": "Refulgent",
+        "Translate": "Сверкающий",
+        "Context": null,
+        "Type": null
+    },
+    "79": {
+        "Word": "Repine",
+        "Translate": "Жаловаться",
+        "Context": null,
+        "Type": null
+    },
+    "80": {
+        "Word": "Runic",
+        "Translate": "Рунический",
+        "Context": null,
+        "Type": null
+    },
+    "81": {
+        "Word": "Solicitous",
+        "Translate": "Внимательный",
+        "Context": null,
+        "Type": null
+    },
+    "82": {
+        "Word": "Stipulate",
+        "Translate": "Ставить Условием",
+        "Context": null,
+        "Type": null
+    },
+    "83": {
+        "Word": "Subliminal",
+        "Translate": "Подсознательный",
+        "Context": null,
+        "Type": null
+    },
+    "84": {
+        "Word": "Supine",
+        "Translate": "Навзничь",
+        "Context": null,
+        "Type": null
+    },
+    "85": {
+        "Word": "Throwback",
+        "Translate": "Движение Назад",
+        "Context": null,
+        "Type": null
+    },
+    "86": {
+        "Word": "Untoward",
+        "Translate": "Упрямый",
+        "Context": null,
+        "Type": null
+    },
+    "87": {
+        "Word": "Vehemence",
+        "Translate": "Горячность",
+        "Context": null,
+        "Type": null
+    },
+    "88": {
+        "Word": "Venerate",
+        "Translate": "Благоговеть",
+        "Context": null,
+        "Type": null
+    },
+    "89": {
+        "Word": "Verisimilar",
+        "Translate": "Правдоподобный",
+        "Context": null,
+        "Type": null
+    },
+    "90": {
+        "Word": "Verisimilitude",
+        "Translate": "Правдоподобие",
+        "Context": null,
+        "Type": null
+    },
+    "91": {
+        "Word": "Vestige",
+        "Translate": "Частица",
+        "Context": null,
+        "Type": null
+    },
+    "92": {
+        "Word": "Vigilance",
+        "Translate": "Бдительность",
+        "Context": null,
+        "Type": null
+    },
+    "93": {
+        "Word": "Vilify",
+        "Translate": "Чернить",
+        "Context": null,
+        "Type": null
+    },
+    "94": {
+        "Word": "Vindicate",
+        "Translate": "Доказывать",
+        "Context": null,
+        "Type": null
+    },
+    "95": {
+        "Word": "Visionary",
+        "Translate": "Мечтательный",
+        "Context": null,
+        "Type": null
+    },
+    "96": {
+        "Word": "Vitriolic",
+        "Translate": "Саркастический",
+        "Context": null,
+        "Type": null
+    },
+    "97": {
+        "Word": "Vituperate",
+        "Translate": "Бранить",
+        "Context": null,
+        "Type": null
+    },
+    "98": {
+        "Word": "Volatile",
+        "Translate": "Непостоянный",
+        "Context": null,
+        "Type": null
+    },
+    "99": {
+        "Word": "Voluptuous",
+        "Translate": "Чувственный",
+        "Context": null,
+        "Type": null
+    },
+    "100": {
+        "Word": "Whittle",
+        "Translate": "Большой Нож",
+        "Context": null,
+        "Type": null
+    },
+    "101": {
+        "Word": "Mouse",
+        "Translate": "Мышь",
+        "Context": "Look! This is mouse!!!!",
+        "Type": "noun"
+    },
+    "102": {
+        "Word": "Permission",
+        "Translate": "Разрешения",
+        "Context": "permission denied message",
+        "Type": "noun"
+    },
+    "103": {
+        "Word": "Test",
+        "Translate": "Тест",
+        "Context": "some test yolo word",
+        "Type": "noun"
+    }
+}
