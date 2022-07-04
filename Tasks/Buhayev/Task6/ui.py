@@ -1,17 +1,102 @@
 from logic_user import User
 import sys
 
-class UI:
+
+class UI_base:
+    @classmethod
+    def check_main_input(cls, toggle):
+        if toggle == 'phone':
+            def check_input():
+                inp = (cls.small_input('please enter your phone (xxxxx-xx-xx)')).split('-')
+                check = all(i.isdigit() for i in inp) and len(inp) == 3 and len(inp[0]) == 4 and len(inp[1]) == len(inp[2]) == 2
+                try:
+                    if check:
+                        return '-'.join(inp)
+                    else: raise ValueError
+                except ValueError:
+                    print('sorry invalid phone')
+                    return check_input()
+
+        elif toggle == 'name':
+            def check_input():
+                try:
+                    name = cls.small_input('please, enter your name')
+                    if name.strip():
+                        return name
+                    else: raise ValueError
+                except ValueError:
+                    print('your name is empty')
+                    return check_input()
+        return check_input
+    
+    
+    @staticmethod
+    def answer(toggle,string):
+        if toggle == 'string':
+            def simple_answer():
+                try:
+                    inp = input(f'{string}? (yes, no):\n')
+                    if inp in ['yes', 'no']: return inp
+                    else: raise ValueError
+                except ValueError:
+                   print('Sorry, cannot understand answer')
+                   return simple_answer()
+
+        elif toggle == 'number':
+            def simple_answer():
+                try:
+                    inp = input(f'{string}:\n')
+                    if int(inp) in [1,2,3]: return inp
+                    else: raise ValueError
+                except ValueError:
+                   print('Sorry, cannot understand answer')
+                   return simple_answer()
+        return simple_answer
+    
+    @staticmethod
+    def small_input(mes):
+        return input(f'{mes}:\n')
+
+    @classmethod
+    def check_number(cls,str):
+        try:
+            return int(cls.small_input(f'Your choice: {str}'))
+        except:
+            print('Sorry, number is incorrect, please try again')
+            return cls.check_number(str)
+        
+    @staticmethod
+    def goodbye():
+        print("Thank you for your time! come back again")
+        sys.exit()
+        
+    @classmethod
+    def check_main_choice(cls):
+        try:
+            print(
+                'please choose:\n1:show all items\n2:show all categories\n3:search by category\n4:search by item name\n5:watch a cart\n6:finished buy\n7:exit')
+            inp = cls.check_number('')
+            if inp in range(1, 9):
+                return inp
+            else:
+                raise ValueError
+        except ValueError:
+            print('Sorry, your input is invalid')
+            cls.check_main_choice()
+
+   
+
+
+    
+
+class UI(UI_base):
+    
     def __init__(self):
-        self.user = self.create_profile()
-
-    def create_profile(self):
-        name = self.check_main_input('name')()
-        phone = self.check_main_input('phone')()
-        user = User(name, phone)
-        user.hello()
-        return user
-
+        self.name = self.check_main_input('name')()
+        self.phone = self.check_main_input('phone')()
+        self.user = User(self.name, self.phone)
+        self.user.hello()
+            
     def main(self):
         inp = self.answer('string','Do you need to help of our bot')()
         if inp == 'yes':
@@ -45,7 +130,7 @@ class UI:
             self.is_continue()
         elif inp == 5:
             self.watch_cart()
-            if self.user.db.cart:
+            if self.user.cart:
                 self.finish_order()
             else:
                 print('you cart is empty')
@@ -82,56 +167,7 @@ class UI:
             print('sorry you enter invalid value for category')
             return self.split_array_of_items(cat_str, category)
 
-
-    def small_input(self, mes):
-        return input(f'{mes}:\n')
-
-
-    def check_number(self, str):
-        try:
-            return int(self.small_input(f'Your choice: {str}'))
-        except:
-            print('Sorry, number is incorrect, please try again')
-            return self.check_number(str)
-
-    def check_main_choice(self):
-        try:
-            print(
-                'please choose:\n1:show all items\n2:show all categories\n3:search by category\n4:search by item name\n5:watch a cart\n6:finished buy\n7:exit')
-            inp = self.check_number('')
-            if inp in range(1, 9):
-                return inp
-            else:
-                raise ValueError
-        except ValueError:
-            print('Sorry, your input is invalid')
-            self.default_show()
-
-
-    def check_main_input(self, toggle):
-        if toggle == 'phone':
-            def check_input():
-                inp = (self.small_input('please enter your phone (xxxxx-xx-xx)')).split('-')
-                check = all(i.isdigit() for i in inp) and len(inp) == 3 and len(inp[0]) == 4 and len(inp[1]) == len(inp[2]) == 2
-                try:
-                    if check:
-                        return '-'.join(inp)
-                    else: raise ValueError
-                except ValueError:
-                    print('sorry invalid phone')
-                    return check_input()
-
-        elif toggle == 'name':
-            def check_input():
-                try:
-                    name = self.small_input('please, enter your name')
-                    if name.strip():
-                        return name
-                    else: raise ValueError
-                except ValueError:
-                    print('your name is empty')
-                    return check_input()
-        return check_input
+   
 
 
     def range_price(self, category, *args):
@@ -144,44 +180,23 @@ class UI:
             return
 
 
-
-    def answer(self, toggle,string):
-        if toggle == 'string':
-            def simple_answer():
-                try:
-                    inp = input(f'{string}? (yes, no):\n')
-                    if inp in ['yes', 'no']: return inp
-                    else: raise ValueError
-                except ValueError:
-                   print('Sorry, cannot understand answer')
-                   return simple_answer()
-
-        elif toggle == 'number':
-            def simple_answer():
-                try:
-                    inp = input(f'{string}:\n')
-                    if int(inp) in [1,2,3]: return inp
-                    else: raise ValueError
-                except ValueError:
-                   print('Sorry, cannot understand answer')
-                   return simple_answer()
-        return simple_answer
-
+   
+    
     def is_continue(self):
         inp = self.answer('string', 'Do you want to continue?')()
         if inp == 'yes':
             self.default_show()
         elif inp == "no":
-            if self.user.db.cart:
-                self.user.db.cart = []
+            if self.user.cart:
+                self.user.cart = []
             self.goodbye()
 
     def watch_cart(self):
         self.user.show_cart()
 
-    def show_all_names(self):
+    def show_all_names(cls):
         print('we have:\n')
-        self.user.show_all_names()
+        cls.user.show_all_names()
 
     def search_item(self, category,):
         try:
@@ -198,6 +213,7 @@ class UI:
             print('Sorry, we cannot find that item, maybe you want to find something else?')
             return self.search_item(category)
 
+    
     def add_item_to_cart(self):
         check = self.answer('string', 'Do you want to add some item to the cart?')()
         if check == 'yes':
@@ -207,6 +223,7 @@ class UI:
         else:
             self.is_continue()
             
+ 
     def delete_some_item_from_cart(self): 
         self.watch_cart()
         try: 
@@ -233,6 +250,7 @@ class UI:
             elif check == '3':
                 self.default_show()
 
+    
     def choose_category_bot(self):
         self.user.show_all_categories()
         try:
@@ -246,9 +264,7 @@ class UI:
             print('sorry, we can not find any category')
             return self.choose_category_bot()
 
-    def goodbye(self):
-        print("Thank you for your time! come back again")
-        sys.exit()
+  
 
         
         

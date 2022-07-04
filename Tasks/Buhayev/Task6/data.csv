@@ -1,7 +1,7 @@
 id,category,name,price,quantity
 1,cloth,jacket,1000,30
-2,cloth,hoodie,250,18
-3,cloth,jeans,320,10
+2,cloth,hoodie,250,16
+3,cloth,jeans,320,8
 4,cloth,t-shirt,100,51
 5,shoes,sneaker,540,9
 6,shoes,steel,1200,32

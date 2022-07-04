@@ -1,85 +1,145 @@
-from db import Base
 
-class User():
+import db as base
+
+
+class Storage_user_logic():
+
+    db = base  
+    
+    @classmethod
+    def show_all_data(cls):
+        print('all items')
+        print(cls.db.show_all_data())
+        
+    @classmethod    
+    def show_all_categories(cls): 
+        print('all categories')
+        cls.db.show_all_categories_str()
+        
+    @classmethod
+    def is_in_data(cls, cat, item):
+        return cls.db.is_in_df(cat, item)
+    
+    @classmethod
+    def return_all_categories(cls):
+        return cls.db.return_all_categories()
+    
+    @classmethod
+    def show_all_names(cls):
+        print('we have:')
+        print(*cls.db.show_all_names(), sep=', ')
+        
+    
+    @classmethod
+    def search_items(cls, key, *args):
+        if not cls.db.get_items(key,*args).empty:
+            print(cls.db.search_items(key, *args))
+        else:
+            raise ValueError
+        
+    @classmethod
+    def range_of_price(cls, start, end, category, *args):
+        print(cls.db.range_of_price(start, end,category, *args))
+        
+    @classmethod
+    def show_all_id(cls):
+         return cls.db.show_all_id()
+     
+    @classmethod
+    def show_all_id(cls):
+         return cls.db.show_all_id()
+                
+    
+            
+            
+            
+class User(Storage_user_logic):
+    
+    
     def __init__(self,name, phone):
-        self.db = Base(name, phone)
+        self.phone = phone
+        self.name = name
+        self.cart = []
+        self.order = []
         
         
-    def print_message(self, message): 
-        print(f'{message}\n----------')
+    def write_order(self):
+        with open('orders.txt', 'a') as orders:
+                orders.write(f'{self.name} (phone - {self.phone}) - {[i for i in self.cart]}\n')
         
     def hello(self):
-        print(f'Hello, {self.db.name}!\nWelcome to our shop')
+        print(f'Hello, {self.name}!\nWelcome to our shop')
     
     def show_name(self):
         try:
-            if self.db.name:
-                return self.db.name
+            if self.name:
+                return self.name
             else: raise ValueError
         except ValueError:
             print('name is empty')
     
-    def show_all_data(self):
-        self.print_message('all items')
-        print(self.db.show_all_data())
-        
-    def show_all_categories(self): 
-        self.print_message('all categories')
-        self.db.show_all_categories_str()
-
-
-    def is_in_data(self, cat, item):
-        return self.db.is_in_df(cat, item)
-
-    def return_all_categories(self):
-        return self.db.return_all_categories()
-
-    def show_all_names(self):
-        print('we have:')
-        print(*self.db.show_all_names(), sep=', ')
-            
-    def search_items(self, key, *args):
-        if not self.db.get_items(key,*args).empty:
-            print(self.db.search_items(key, *args))
-        else:
-            raise ValueError
-
-    def range_of_price(self, start, end, category, *args):
-        print(self.db.range_of_price(start, end,category, *args))
-
-    def show_cart(self): 
-        return self.db.show_cart()
-        
-    def add_item_to_cart(self,*id):
-        print(f'item with id {id} adding to cart')
-        self.db.choose_item(*id)
-
-    def show_all_id(self):
-         return self.db.show_all_id()
-                
     def delete_from_cart(self, id): 
-        for i in self.db.cart:
+        for en,i in enumerate(self.cart):
             if i['id'] == id:
-                self.db.delete_from_cart(id)
                 self.db.add_items(id)
+                self.cart.pop(en)
+                Storage_user_logic.db.add_items(id)
                 self.show_cart()
                 return ''
             else: raise ValueError
+  
             
-    def show_cart(self):
-        print('in cart:\n')
-        [print(f'id - {i["id"]}; name - {i["name"]}; price-{i["price"]}\n') for i in self.db.cart]
-
     def buy_items(self):
-        
-        if self.db.cart:
-            self.db.buy_items()
-            print(f'Your order, {self.db.name}:\n{self.db.order}')
+        if self.cart:
+            self.db.delete_some_items(self.cart)
+            self.order = self.cart
+            self.cart = []
+            print(f'Your order:\n{self.order}')
         else:
             print('sorry, your cart is empty')
-        
+    
+       
     def clear_cart(self):
-        self.db.cart = []
+        self.cart = []
+        
+    def show_cart(self):
+        print('in cart:\n')
+        [print(f'id - {i["id"]}; name - {i["name"]}; price-{i["price"]}\n') for i in self.cart]
+        
+    def show_cart(self): 
+        print(self.cart)
+        
+        
+    def choose_item(self, *id):
+        items = self.db.get_items('id', *id).values.tolist()
+        print(items)
+        [self.cart.append({'id':i[0], 'category':i[1], 'name':i[2], 'price':i[3] }) for i in items]
+        
+        
+    def add_item_to_cart(self,*id):
+        print(f'item with id {id} adding to cart')
+        self.choose_item(*id)
+        print(self.cart)
+              
+    
+
+   
+    
+    
+if __name__ == '__main__':
+    
+    test = User('name', 'phone')
+    print(test.show_all_data())
+    print(base.df)
+        
+  
+              
+    
+                
+                
+
+    
+    
         
         
         
