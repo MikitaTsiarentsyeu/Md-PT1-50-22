@@ -1,0 +1,53 @@
+"""This is a warehouse."""
+
+shopping = [{
+    "id": 1,
+    "Name": "HP-AE12",
+    "Available": 5,
+    "Price": 800
+}, {
+    "id": 2,
+    "Name": "DELL",
+    "Available": 5,
+    "Price": 1000
+}, {
+    "id": 3,
+    "Name": "ASUS",
+    "Available": 5,
+    "Price": 850
+}, {
+    "id": 4,
+    "Name": "APPLE",
+    "Available": 5,
+    "Price": 1600
+}, {
+    "id": 5,
+    "Name": "ACER",
+    "Available": 5,
+    "Price": 700
+}, {
+    "id": 6,
+    "Name": "SAMSUNG",
+    "Available": 5,
+    "Price": 900
+}, {
+    "id": 7,
+    "Name": "OPPO",
+    "Available": 5,
+    "Price": 600
+}, {
+    "id": 8,
+    "Name": "XAOMI",
+    "Available": 5,
+    "Price": 1200
+}, {
+    "id": 9,
+    "Name": "HUAWEI",
+    "Available": 5,
+    "Price": 1100
+}, {
+    "id": 10,
+    "Name": "VIVO",
+    "Available": 5,
+    "Price": 750
+}]
