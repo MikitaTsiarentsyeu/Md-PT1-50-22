@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, CardActions, CardContent, CardMedia, Button, Typography, useMediaQuery, Grid,Container} from '@mui/material';
+import { useMediaQuery, Grid,Container} from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import Map from "./Map";
 import CardSet from "./CardSet";

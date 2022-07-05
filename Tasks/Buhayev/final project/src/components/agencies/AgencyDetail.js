@@ -1,6 +1,5 @@
 import React, { useEffect, useContext} from 'react';
 import {Card, CardActions, CardContent, CardMedia, Button, Typography,  Box, CardHeader,Stack, Grid} from '@mui/material';
-import {createTheme} from '@mui/material/styles';
 import Axios from "axios";
 import {useImmerReducer} from 'use-immer';
 import { useNavigate, useParams } from "react-router-dom";
@@ -8,28 +7,17 @@ import Navbar from '../elements/Navbar';
 import Footer from '../elements/Footer'
 import {styles} from '../elements/utils/Styles'
 import {Item} from '../elements/utils/Item'
-
-
-
 import stateContext from '../../Context/StateContext';
-
 import {initialState} from '../elements/utils/InitialState'
 import {ReducerFuction} from '../elements/utils/Reducer'
 
 
 function AgencyDetail(props) {
-    const theme = createTheme();
+
     const navigate = useNavigate();
     const [state, dispatch] = useImmerReducer(ReducerFuction, initialState);
     const GlobalState = useContext(stateContext) 
     const params = useParams()
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-    
-		dispatch({type: 'changeRequest', })
-        console.log('success');
-    };
 
     
 

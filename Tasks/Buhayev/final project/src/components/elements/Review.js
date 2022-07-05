@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useMemo, useContext,useState} from 'react';
 import {  Button, Card,  Box,Grid,TextField,CardContent,Typography,Snackbar} from '@mui/material';
 import {useImmerReducer} from 'use-immer';
-import { useNavigate } from "react-router-dom";
 import Axios from "axios";
 import stateContext from '../../Context/StateContext';
 import Carousel from 'react-material-ui-carousel'
@@ -9,7 +8,6 @@ import {styles} from './utils/Styles'
 
 function Review() {
 
-    const navigate = useNavigate();
     const initialState = {
         review:'',
         sendRequest:0,

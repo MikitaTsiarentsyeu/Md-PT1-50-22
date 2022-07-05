@@ -8,9 +8,7 @@ import {
 	TileLayer,
 	Marker,
 	Popup,
-	Polyline,
-	Polygon,
-	useMap,å
+	useMap,
 } from "react-leaflet";
 import { Icon } from "leaflet";
 // MUI
@@ -34,10 +32,7 @@ import RoomIcon from "@mui/icons-material/Room";
 import houseIconPng from "./Assets/Mapicons/house.png";
 import apartmentIconPng from "./Assets/Mapicons/apartment.png";
 import officeIconPng from "./Assets/Mapicons/office.png";
-// Assets
-import img1 from "./Assets/img1.jpg";
-import myListings from "./Assets/Data/Dummydata";
-import polygonOne from "./Shape";
+
 
 const useStyles = makeStyles({
 	cardStyle: {
@@ -93,6 +88,7 @@ function Listings() {
 			case "getMap":
 				draft.mapInstance = action.mapData;
 				break;
+			default: break;
 		}
 	}
 
@@ -104,21 +100,6 @@ function Listings() {
 		return null;
 	}
 
-	function GoEast() {
-		setLatitude(51.46567014039476);
-		setLongitude(0.2596173538795676);
-	}
-
-	function GoCenter() {
-		setLatitude(51.48740865233002);
-		setLongitude(-0.12667052265135625);
-	}
-
-	const polyOne = [
-		[51.505, -0.09],
-		[51.51, -0.1],
-		[51.51, -0.12],
-	];
 
 	const [allListings, setAllListings] = useState([]);
 	const [dataIsLoading, setDataIsLoading] = useState(true);
@@ -249,6 +230,7 @@ function Listings() {
 										<Popup>
 											<Typography variant="h5">{listing.title}</Typography>
 											<img
+												alt = 'some img'
 												src={listing.picture1}
 												style={{
 													height: "14rem",

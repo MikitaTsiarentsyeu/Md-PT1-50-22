@@ -10,11 +10,6 @@ export default function ImgMediaCard() {
 
     const navigate = useNavigate();
 
-
-
-
-    
-
     const [allListings, setAllListings] = useState([]);
     const [dataIsLoading, setDataIsLoading] = useState(true);
 

@@ -76,13 +76,6 @@ function ProfileUpdate(props) {
 
 	const [state, dispatch] = useImmerReducer(ReducerFuction, initialState);
     const GlobalState = useContext(stateContext) 
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-    
-		dispatch({type: 'changeRequest', })
-        console.log('success');
-    };
     
 
 
@@ -175,6 +168,7 @@ function ProfileUpdate(props) {
 					}}
 				>
 					<img
+						alt='some img'
 						src={props.userProfile.agencyPicture}
 						style={{ height: "6rem" }}
 					/>

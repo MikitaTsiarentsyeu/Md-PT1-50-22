@@ -7,7 +7,6 @@ import {
     useMediaQuery, Button,List,ListItem,Container
 } from "@mui/material";
 import Axios from "axios";
-import ImgMediaCard from "./CardSet"
 import { useNavigate } from "react-router-dom";
 
 
@@ -15,11 +14,8 @@ import { useNavigate } from "react-router-dom";
 
 
 function Map() {
-    // fetch('http://127.0.0.1:8000/api/listings/').then(response=>response.json()).then(data=>console.log(data))
-    const [allData, setAllData] = useState([]);
+  
 	const navigate = useNavigate();
-    const [latitude, setLatitude] = useState(52.24919907014026)
-    const [longitude, setLongitude] = useState(21.021662057671257)
     const theme = useTheme()
     const display_sm = useMediaQuery(theme.breakpoints.up('sm'));
     const display_md = useMediaQuery(theme.breakpoints.up('md'));
