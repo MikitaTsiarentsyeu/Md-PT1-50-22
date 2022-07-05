@@ -76,6 +76,9 @@ class User(Storage_user_logic):
     def get_name(self):
         return self.name
     
+    def get_order(self):
+        return self.order
+    
     def show_name(self):
         try:
             if self.name:
@@ -85,7 +88,7 @@ class User(Storage_user_logic):
             print('name is empty')
     
     def delete_from_cart(self, id): 
-        for en,i in enumerate(self.cart):
+        for en,i in enumerate(self.get_cart()):
             if i['id'] == id:
                 self.db.add_items(id)
                 self.cart.pop(en)
@@ -96,7 +99,7 @@ class User(Storage_user_logic):
             
     def buy_items_logic(self):
         if self.cart:
-            self.db.delete_some_items(self.cart)
+            self.db.delete_some_items(self.get_cart())
             self.order = self.get_cart()
             self.cart = []
             return True
@@ -104,7 +107,7 @@ class User(Storage_user_logic):
     def buy_items(self):
         if self.cart:
             self.buy_items_logic()
-            print(f'Your order:\n{self.order}')
+            print(f'Your order:\n{self.get_order()}')
         else:
             print('sorry, your cart is empty')
     
