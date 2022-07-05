@@ -65,10 +65,16 @@ class User(Storage_user_logic):
         
     def write_order(self):
         with open('orders.txt', 'a') as orders:
-                orders.write(f'{self.name} (phone - {self.phone}) - {[i for i in self.cart]}\n')
+                orders.write(f'{self.get_name()} (phone - {self.get_phone()}) - {[i for i in self.get_cart()]}\n')
         
     def hello(self):
         print(f'Hello, {self.name}!\nWelcome to our shop')
+    
+    def get_phone(self):
+        return self.phone
+    
+    def get_name(self):
+        return self.name
     
     def show_name(self):
         try:
@@ -87,13 +93,17 @@ class User(Storage_user_logic):
                 self.show_cart()
                 return ''
             else: raise ValueError
-  
+            
+    def buy_items_logic(self):
+        if self.cart:
+            self.db.delete_some_items(self.cart)
+            self.order = self.get_cart()
+            self.cart = []
+            return True
             
     def buy_items(self):
         if self.cart:
-            self.db.delete_some_items(self.cart)
-            self.order = self.cart
-            self.cart = []
+            self.buy_items_logic()
             print(f'Your order:\n{self.order}')
         else:
             print('sorry, your cart is empty')
@@ -104,22 +114,23 @@ class User(Storage_user_logic):
         
     def show_cart(self):
         print('in cart:\n')
-        [print(f'id - {i["id"]}; name - {i["name"]}; price-{i["price"]}\n') for i in self.cart]
+        [print(f'id - {i["id"]}; name - {i["name"]}; price-{i["price"]}\n') for i in self.get_cart]
         
     def show_cart(self): 
         print(self.cart)
         
-        
+    def get_cart(self): 
+        return self.cart
+    
     def choose_item(self, *id):
         items = self.db.get_items('id', *id).values.tolist()
-        print(items)
         [self.cart.append({'id':i[0], 'category':i[1], 'name':i[2], 'price':i[3] }) for i in items]
         
         
     def add_item_to_cart(self,*id):
         print(f'item with id {id} adding to cart')
         self.choose_item(*id)
-        print(self.cart)
+        self.show_cart()
               
     
 

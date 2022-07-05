@@ -97,6 +97,8 @@ class UI(UI_base):
         self.user = User(self.name, self.phone)
         self.user.hello()
             
+            
+        
     def main(self):
         inp = self.answer('string','Do you need to help of our bot')()
         if inp == 'yes':
