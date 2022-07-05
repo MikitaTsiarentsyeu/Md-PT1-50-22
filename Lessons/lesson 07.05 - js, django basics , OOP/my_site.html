@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+        <!-- <style>
+            h1 { color: red;}
+            h2 { color: red;}
+            p { color: blue}
+        </style> -->
+        <link rel="stylesheet" href="style.css"/>
+
+        <!-- <script>
+            alert("head is ready!");
+        </script> -->
+
+        <script src="script.js"></script>
+
+    </head>
+    <body>
+
+
+        <h1 onmouseover="this.style.color ='red'" onmouseout="this.style.color ='blue'">I’m blue!</h1>
+
+        <h1 onclick="alert('Thank you')">Click me!</h1>
+
+        <h1 id="test" onclick="clickHandler(this)">Click me!</h1>
+
+
+        <p>Some <u><b><i>text</i></b></u> <strike>without</strike> a tag</p>
+        <p>Another text</p>
+        
+        <h1 class="headline huge_text">Huuuge headline</h1>
+        <h1 class="headline huge_text" id="very_important_h1">Huuuge headline</h1>
+        <h1 class="headline huge_text">Huuuge headline</h1>
+        <h2 class="headline">Huuuge headline</h2>
+        <h3 class="headline">Huuuge headline</h3>
+        <h4 class="headline">Huuuge headline</h4>
+        <h5 class="headline">Huuuge headline</h5>
+        <h6 class="headline">Huuuge headline</h6>
+        <h1 class="headline">Huuuge headline</h1>
+        
+        <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+            <li>four</li>
+            <li>
+                <a href="http://www.w3schools.com">
+                    W3C School
+                </a>
+            </li>
+            
+        </ul>
+
+        <ol>
+            <li>banana</li>
+            <li>apple</li>
+        </ol>
+
+        <img src="photo.jpg" width="50%" height="50%" alt="Ooops, not loaded"/>
+
+        
+        <table>
+            <tr>
+                <td>Row 1, cell 1</td>
+                <td>Row 1, cell 2</td>
+                <td>Row 1, cell 3</td>
+            </tr>
+            <tr>
+                <td>Row 2, cell 1</td>
+                <td>Row 2, cell 2</td>
+                <td>Row 2, cell 3</td>
+            </tr>
+        </table>
+
+        <form action="processForm()" method="post">
+
+            <p>Name:</p>
+            <p><input type="text" name="name" value="Your name"></p>
+        
+            <p>Comments: </p>
+            <p><textarea name="comments" rows="5" cols="20">Your comments</textarea></p>
+        
+            <p>Are you:</p>
+            <p><input type="radio" name="areyou" value="male"> Male</p>
+            <p><input type="radio" name="areyou" value="female"> Female</p>
+        
+            <p><input type="submit"></p>
+        
+        </form>
+        
+
+    </body>
+</html>
