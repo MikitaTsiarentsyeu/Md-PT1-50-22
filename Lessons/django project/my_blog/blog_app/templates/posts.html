@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Posts</title>
+    </head>
+    <body>
+        <div>
+            {% for post in posts %}
+                <div>
+                    <a href="{% url 'post' post.id %}">
+                        <h1>{{ post.title|capfirst }}</h1>
+                    </a>
+                    <h3>{{ post.subtitle }}</h3>
+                    <p>by {{ post.author.name }}</p>
+                    {% if post.image %}
+                        <img width="50%" src="{{post.image.url}}">
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </body>
+</html>
