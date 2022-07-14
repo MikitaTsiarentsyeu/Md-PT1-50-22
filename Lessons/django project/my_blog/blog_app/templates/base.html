@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Blogs</title>
+        <link rel="stylesheet" href="{% static 'blog_app/css/style.css' %}">
+        <script src="{% static 'blog_app/js/script.js' %}" ></script>
+    </head>
+    <body>
+        <div id="header" style="display:flex">
+            <a style="width: 90%;" href="{% url 'posts' %}"><h1 id="logo">Blogs</h1></a>
+            <a href="#"><p>Login</p></a>  
+            <a href="{% url 'add_post' %}"><p>Add post</p></a>
+        </div>
+        <div id="content">
+
+            {% block content %}
+            {% endblock content %}
+
+        </div>
+        <div id="footer">
+            <p>powered by Django</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+a {
+	color: black;
+}
+
+a:visited {
+	text-decoration: none;
+	color: black;
+}
+
+#header {
+	justify-content: space-evenly;
+	background-color: cadetblue;
+}
+
+.item {
+	margin-left: 10%;
+}
+
+#footer {
+	display: flex;
+    justify-content: center;
+}

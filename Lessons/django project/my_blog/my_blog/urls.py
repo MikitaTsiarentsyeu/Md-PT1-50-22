@@ -23,8 +23,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('posts/', views.posts, name='posts'),
+    path('posts/add', views.add_post, name='add_post'),
+    path('posts/addmf', views.add_post_model_form, name='add_post'),
     path('posts/<int:post_id>', views.post, name='post'),
     path('posts/<str:post_id>', views.post, name='post'),
+    
     
 ]
 
