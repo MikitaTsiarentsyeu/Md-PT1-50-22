@@ -11,8 +11,17 @@
     <body>
         <div id="header" style="display:flex">
             <a style="width: 90%;" href="{% url 'posts' %}"><h1 id="logo">Blogs</h1></a>
-            <a href="#"><p>Login</p></a>  
-            <a href="{% url 'add_post' %}"><p>Add post</p></a>
+            <div style="display: flex; justify-content: space-evenly;">
+                {% if user.is_authenticated %}
+                    <p class="navbar-item">{{ user.get_username }}</p>
+                    <a class="navbar-item" href="{% url 'logout' %}?next={{ request.path }}"><p>Logout</p></a>
+                {% else %}
+                    <a class="navbar-item" href="{% url 'login' %}?next={{ request.path }}"><p>Login</p></a>
+                {% endif %}
+                {% if perms.blog_app.add_post %}
+                    <a class="navbar-item" href="{% url 'add_post' %}"><p>Add post</p></a>
+                {% endif %}
+            </div>
         </div>
         <div id="content">
 

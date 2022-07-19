@@ -9,6 +9,9 @@
                 </a>
                 <h3>{{ post.subtitle }}</h3>
                 <p>by {{ post.author.name }}</p>
+                {% if post.id in viewed_posts.values %}
+                    <p>|viewed|</p>
+                {% endif %}
                 {% if post.image %}
                     <img width="50%" src="{{post.image.url}}">
                 {% endif %}
