@@ -1,0 +1,27 @@
+.flex1{
+    display: flex;
+    flex-direction: row;
+    }
+
+.flex2{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    }  
+.nav{
+    width: 25em;
+    background-color: lightgray;
+}
+.article{
+    background-color: darkgray;
+    margin-bottom: 0.2em;
+}
+
+footer{
+    background-color: gray;
+}
+
+.img{
+    display: flex;
+    justify-content: flex-end
+}

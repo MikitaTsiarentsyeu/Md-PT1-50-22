@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'envelope_app/css/style.css'%}  ">
+
+</head>
+<body>
+    <Header>
+        <div class="logo"> <a href="{% url 'dashboard' %}"> Envelop</a></div>
+        <div> <a href="{% url 'dashboard' %}">Rows</a> </div>
+        <div class="button"> <a href="{% url 'add_row' %}"> Add row</a></div>
+
+    </Header>
+    <div class="line"></div>
+    <div class="main">     
+        <div class="main-left"></div>
+        <div class="main-center">
+
+            <div>It is my very first app by Django</div>
+
+            
+        </div>
+        <div class="main-right"></div>
+    </div> 
+    <div class="line"></div>
+
+    <footer></footer>
+
+</body>
+</html>

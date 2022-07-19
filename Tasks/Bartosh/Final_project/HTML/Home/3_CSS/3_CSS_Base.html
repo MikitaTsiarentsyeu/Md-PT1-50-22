@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивная навигация</title>
+</head>
+<body>
+    <style>
+        div.MenuLevel1 > div {
+            width: 100px; 
+            border-radius: 5%; 
+            color: gray; 
+            background-color: lightgray; 
+            border: solid black 1px; 
+            cursor: pointer; 
+            float: left;
+            position: relative;
+        }
+        div.MenuLevel2 { width: 100px; display: none }
+
+        div.MenuLevel2 > div { 
+            background-color: lightgray; 
+            color: gray;
+            border: solid black 1px; 
+            border-radius: 5%;
+            cursor: pointer }
+        div.MenuLevel1 > div:hover div.MenuLevel2 { 
+            display: block; 
+            position: absolute; 
+            top: 105%; 
+            }
+            div.MenuLevel1 > div:hover {background-color: darkgray; color: lightgray;}
+
+    @media all and (max-width: 650px) {
+        div.MenuLevel1 {width: 100px}
+        div.MenuLevel1 > div {
+            width: 100px; 
+            border-radius: 5%; 
+            color: gray; 
+            background-color: lightgray; 
+            border: solid black 1px; 
+            cursor: pointer; 
+            position: relative; 
+            float: none;
+        }
+        div.MenuLevel2 { width: 100px; display: none }
+
+        div.MenuLevel2 > div { 
+            background-color: lightgray; 
+            color: gray;
+            border: solid black 1px; 
+            border-radius: 5%;
+            cursor: pointer;
+            }
+        div.MenuLevel1 > div:hover div.MenuLevel2 { 
+            display: block; 
+            position: absolute; 
+            left: 105%;
+            top: 90%; 
+            }
+            div.MenuLevel1 > div:hover {background-color: darkgray; color: lightgray;}
+
+    }    
+
+
+    </style>
+    
+    <div class='MenuLevel1'>
+        <div>Понедельник
+            <div class='MenuLevel2'>
+                <div>Завтрак</div>
+                <div>Обед</div>
+                <div>Ужин</div>
+            </div>
+        </div>
+
+
+        <div>Вторник
+            <div class='MenuLevel2'>
+                <div>Завтрак</div>
+                <div>Обед</div>
+                <div>Ужин</div>
+            </div>
+        </div>
+
+        <div>Среда
+            <div class='MenuLevel2'>
+                <div>Завтрак</div>
+                <div>Обед</div>
+                <div>Ужин</div>
+            </div>
+        </div>
+
+        <div>Четверг
+            <div class='MenuLevel2'>
+                <div>Завтрак</div>
+                <div>Обед</div>
+                <div>Ужин</div>
+            </div>
+        </div>
+        
+        <div>Пятница
+            <div class='MenuLevel2'>
+                <div>Завтрак</div>
+                <div>Обед</div>
+                <div>Ужин</div>
+            </div>
+        </div>
+
+        <div>Суббота
+            <div class='MenuLevel2'>
+                <div>Завтрак</div>
+                <div>Обед</div>
+                <div>Ужин</div>
+            </div>
+        </div>
+    
+    </div>
+</body>
+</html>

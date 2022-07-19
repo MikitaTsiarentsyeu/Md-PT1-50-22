@@ -1,0 +1,40 @@
+.card {
+background-image: url(cards.png);
+width: 140px;
+height: 190px;
+float: left;
+}
+.eight {background-position: -433px -1193px;}
+
+.q {background-position: 0px -1791px;
+}   
+
+.nine {background-position: -288px -1393px;
+    }
+
+.a {background-position: 427px 390px;
+    }
+
+.j {background-position: 0px 190px;
+    }
+
+.cards   {
+    background-image: url(cards.png);
+    width: 140px;
+    height: 190px;
+    float: left;
+    }
+
+.eights {background-position: -433px -1193px;}
+
+.qs {background-position: 0px -1791px;
+    margin-left: -100px;}   
+
+.nines {background-position: -288px -1393px;
+    margin-left: -100px;}
+
+.as {background-position: 427px 390px;
+    margin-left: -100px;}
+
+.js {background-position: 0px 190px;
+    margin-left: -100px;}

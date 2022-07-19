@@ -1,0 +1,29 @@
+.nav{
+    width: 15em;
+    background-color: lightgray;
+    float: left;
+    }
+
+.article{
+    background-color: darkgray;
+    margin-bottom: 0.2em;
+        }
+
+.bottom{overflow: hidden}
+
+footer{
+    background-color: gray;
+    clear: both;
+    }
+
+.img{
+    float: right;
+    }
+
+.wrap{
+    clear: both;
+    }
+
+.main{
+    background-color: rgb(226, 225, 225);
+    }

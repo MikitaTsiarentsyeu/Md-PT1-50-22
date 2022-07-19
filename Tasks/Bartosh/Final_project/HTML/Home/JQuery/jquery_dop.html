@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery доп.задание</title>
+    <style>
+        form {width: 400px;}
+        input {margin-bottom: 5px;}
+        #submit {margin-top: 15px;}
+        
+    </style>
+</head>
+<body>
+    <h1>Проверка пароля</h1>
+    <form>
+        <fieldset>
+            <label><input type="text" id="pass1"> * Пароль</label> <br>
+            <label><input type="text" id="pass2"> * Повторите пароль</label> <br>
+            <input type="submit" value="Отправить" id="submit">
+        </fieldset>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+    crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).ready(function($){
+            $('input:text').keypress(function(){
+                $('input:text').css("background-color", "green")
+            })
+
+            $('#pass2').keyup(function(){
+                var value2 = $('#pass2').val();
+                var value1 = $('#pass1').val();                
+
+            if (value1 === value2){$('input:text').css("background-color", "green")}    
+            else {$('input:text').css("background-color", "red")}    
+                               
+                })
+         
+
+        });
+    </script>
+
+</body>
+</html>

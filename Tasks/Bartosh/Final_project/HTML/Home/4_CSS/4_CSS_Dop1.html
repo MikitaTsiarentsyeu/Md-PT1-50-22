@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4 CSS дополнительное 1</title>
+    <style>
+        p {
+          border: solid lightgray 1px;
+          border-top-right-radius: 12px;
+          border-bottom-left-radius: 12px;
+        }
+
+        a[href*='https']::before {content: url(files/extref.png);}
+        p a[href$='.doc']::after {content: url(files/logo-doc.jpg);}
+        a[href$='.pdf']::after {content: url(files/logo-pdf.png);}
+        a[href$='.zip']::after {content: url(files/logo-zip.gif);}
+        
+
+        li::before {content: url(files/logo-list.jpg);}
+
+        li{list-style: none;}
+
+        li>img {display: none;}
+
+        li:hover img {display: inline;}
+
+        li a[href$='.gif']::after {content: url(files/logo-zip.gif); display: none;}
+        li:hover a[href$='.gif']::after {content: url(files/logo-zip.gif); display: inline;}
+        
+
+    </style>
+</head>
+<body>
+    <h2>Форматы файлов.</h2>
+
+    <p>
+        .DOC или .doc (от англ. <a href="https://ru.wikipedia.org/wiki/doc" target="blank">document</a> ) — расширение имени 
+        файла, используемое для файлов, представляющих текст, с разметкой или без.Расширение .DOC часто использовалось для 
+        обозначения простых текстовых файлов без форматирования, однако позже стало использоваться для двоичных форматов с разметкой. <br>
+        <a href="files/document.doc">Документ MS Word</a>
+    </p>
+    
+    <p>
+        Portable Document Format (<a href="https://ru.wikipedia.org/wiki/pdf">PDF</a>) — межплатформенный формат электронных 
+        документов, разработанный фирмой Adobe Systems с использованием ряда возможностей языка PostScript. <br>
+        <a href="files/document.pdf">Документ PDF</a>         
+    </p>
+
+    <p>
+        ZIP — популярный формат сжатия данных и архивации файлов. Файл в этом формате обычно имеет расширение <a href="https://ru.wikipedia.org/wiki/zip">.zip</a> и хранит в 
+        сжатом или несжатом виде один или несколько файлов, которые можно из него извлечь путём распаковки с помощью специальной 
+        программы. <br>
+        <a href="files/document.zip">Архив</a>   
+    </p>
+
+    <h3>Это список из файлов</h3>
+
+    <ul>
+        <li> <a href="files/document.doc">Документ MS Word</a><img src="files/logo-doc.jpg" alt="img"></li>
+        <li> <a href="files/logo-pdf.png">Документ PDF</a> <img src="files/logo-pdf.png" alt="img"></li>
+        <li> <a href="files/logo-zip.gif">Архив </a>
+    </ul>
+</body>
+</html>
