@@ -1,0 +1,167 @@
+body{
+    font-family: 'Inter', sans-serif;
+}
+
+header{
+    display: flex; 
+    justify-content: space-evenly;
+    align-items: flex-end;   
+}
+.logo {
+    font-size: 39px;
+    letter-spacing: 10px;
+}
+
+.button{
+    background-color: rgb(131, 175, 155);
+    border-radius: 24px;
+    width: 100px;
+    height: 23px;
+    margin-bottom: 3px;
+    text-align: center;
+}
+.line {
+    background-color: rgb(92, 92, 92);
+    height: 1px;
+    width: 60%;
+    display: flex;
+    margin-left: 20%;
+    margin-top: 10px;
+    
+}
+.main{
+    display: flex;
+}
+
+.main-center{
+    text-indent: 3em;
+    height: 45em;
+    width: 60%;
+    margin-top: 20px;
+}
+.main-left{
+    height: 1em;
+    width: 20%;
+}
+.main-right{
+    height: 1em;
+    width: 20%;
+}
+
+.box{
+    background-color:   rgb(245, 245, 245);
+    border-radius: 24px;
+    margin: 10px;
+    font-size: 14px;
+    
+}
+.main-center-up{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.rows{
+    width: 100%;
+    height: 500px;
+}
+.button a{
+    color: whitesmoke
+}
+a{
+    color: grey;
+    text-decoration: none;
+    
+}
+
+a:visited {
+    text-decoration: none;
+    
+}
+
+table{
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+td{
+    border-right-style: solid;
+    border-right-color: grey;
+    border-right-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: grey;
+    border-bottom-width: 1px;
+
+
+}
+
+@media all and (max-width: 1000px) 
+{
+    header{display: block;} 
+    .main-left{
+        height: 1em;
+        width: 5%;
+    }
+    .main-right{
+        height: 1em;
+        width: 5%;
+    }
+    .box{
+        background-color: white;
+        margin: 10px;   
+        font-size: 12px;
+    }
+    header{
+        display: block; 
+        justify-content: center;
+        align-items: center; 
+        margin-left: 25%;  
+        
+    }
+    .line {
+        background-color: rgb(92, 92, 92);
+        height: 1px;
+        width: 90%;
+        display: flex;
+        margin-left: 5%;
+        margin-top: 10px;
+    }
+    .logo {
+        margin-bottom: 10px;}
+    .button {
+        margin-top: 10px;}
+}
+
+
+@media all and (max-width: 550px) 
+{
+    header{display: block;} 
+    .main-left{display: none;}
+    .main-right{display: none;}
+    .box{
+        background-color: white;
+        margin: 1px;   
+        font-size: 12px;
+    }
+    header{
+        display: block; 
+        justify-content: center;
+        align-items: center; 
+        margin-left: 25%;  
+        
+    }
+    .line {
+        background-color: rgb(92, 92, 92);
+        height: 1px;
+        width: 90%;
+        display: flex;
+        margin-left: 5%;
+        margin-top: 10px;
+    }
+    .logo {
+        margin-bottom: 10px;}
+    .button {
+        margin-top: 10px;}
+}
+
+

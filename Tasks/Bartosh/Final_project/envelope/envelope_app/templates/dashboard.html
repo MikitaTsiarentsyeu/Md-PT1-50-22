@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="main-center-up">
+        <div class="rows box">
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Currency</th>
+                    <th>Exchange rate</th>
+                    <th>Income or expense</th>
+                    <th>Place</th>
+                    <th>Envelope</th>
+                    <th>User</th>
+                    <th>Comment</th>
+                </tr>    
+                {% for row in rows %}
+                <tr>
+                    <td>{{row.date}}</td>
+                    <td>{{row.amount}}</td>
+                    <td>{{row.currency}}</td>
+                    <td>{{row.exchange_rate}}</td>
+                    <td>{{row.income_or_expense}}</td>
+                    <td>{{row.place}}</td>
+                    <td>{{row.envelope}}</td>
+                    <td>{{row.user}}</td>
+                    <td>{{row.comment}}</td>
+                </tr>
+                
+                {% endfor %}               
+            </table>
+            
+        </div>
+
+    </div>
+
+{% endblock content %}
