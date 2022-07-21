@@ -1,0 +1,23 @@
+{% extends 'base-page.html' %}
+{% load static %}
+
+{% block title %}
+    {{object.name}}
+{% endblock title %}
+
+{% block container %}
+<div class="page">
+    <div class="container text-center my-5"> 
+        <div class="col-lg-10 col-md-8 mx-auto"> 
+            <p><img src="{{product.image_url}}" style="float: left" title="{{product.image_url}}" alt="{{product.image_url}}"
+                width="200" class="col-md-5 mr-3"></p>
+            <h2>{{object.name}} </h2>
+            <br>
+            <p align="justify">{{ object.note |linebreaksbr }}</p>
+            <br>
+            <h4>Price: {{ object.price }} usd.</h4>
+        </div>  
+    </div>
+</div>
+
+{% endblock container %}
