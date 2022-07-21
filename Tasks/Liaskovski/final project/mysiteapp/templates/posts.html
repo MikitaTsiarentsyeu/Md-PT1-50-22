@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Список участников
+{% endblock %}
+
+
+{% block content %}
+    {% if posts %}
+            {% for post in posts %}
+            <div id="content-posts">
+                <ul>
+                    <div id="ol">
+                        <hr>
+                            <li><h3>{{post.title|capfirst}}</h3></li>    
+                            <h3>{{post.subtitle}}</h3> 
+                        <hr>
+                    </div>
+                </ul>    
+            </div>
+          
+        
+            {% endfor %}
+    {% else %}
+             <h1 id="norecords">Записи не найдены</h1>
+       
+    {% endif %}        
+{% endblock %}
+
+
+
+</html>

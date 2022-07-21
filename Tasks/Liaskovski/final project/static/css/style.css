@@ -1,0 +1,78 @@
+#header{
+    background-image: url('/static/mysiteapp/img/pic2.png' ); 
+    height: 380px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+}
+
+#content{
+    display: flex;
+    align-content: space-around;
+    justify-content: space-around;
+    height: 250px;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+}
+#header-menu{
+    display: flex;
+    justify-content: space-around;
+    background-image: linear-gradient(90deg, #69b7eb, #b3dbd3, #f4d6db);
+    
+}
+#title-header{
+    color: #f2f4f6;
+
+}
+
+#footer{
+    background: radial-gradient(at top, #FEFFFF, #A7CECC);
+    margin-top: -13px;
+}
+
+h4{
+    color: rgb(19, 19, 19);
+}
+h4:hover{
+    cursor: pointer;
+    background:#1682e6;
+}
+#footer-menu{
+    height: 35px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-around;
+}
+
+
+#links{
+    margin: 13px;
+    padding-top: 10px;
+    padding-left: 25px;
+}
+
+
+
+#country{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   
+}
+
+#request{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#forms{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+

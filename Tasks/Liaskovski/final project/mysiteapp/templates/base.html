@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title> {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="shortcut icon" href="{% static 'mysiteapp/img/pic1.png' %}" type="image/png">
+    <link href="http://fonts.cdnfonts.com/css/wensley" rel="stylesheet">                
+    <style>
+        @import url('http://fonts.cdnfonts.com/css/wensley');
+        a { 
+         text-decoration: none; 
+        }
+        textarea {
+    width: 70%;
+    height: 150px;
+    resize: none; 
+   }  
+       </style>
+</head>
+<body>
+    
+    <div id="header">
+        <a href="{% url 'home' %}">
+            <p id="pic1"><img src="{% static 'mysiteapp/img/pic1.png' %}" style="border: none;" width="450" alt="Что то пошло не так"></p>
+        </a>
+        <div id="title-header">
+            <h1>Общественное объединение</h1>
+            <h2>Беларусский союз</h2>
+            <h2>Музыкальных деятелей</h2>
+        </div>
+    </div>
+    
+    <div id="header-menu">
+        <a href="{% url 'about' %}"><h4> О нас</h4></a>
+        <a href="{% url 'home' %}"><h4>Главная</h4></a>
+        <a href="{% url 'request' %}"><h4>Оставить заявку</h4></a>
+    </div>
+    {% block content %}
+    {% endblock %}
+        
+    </div>   
+    <div id="footer">
+        <p id="links">Важные ссылки:</p>
+        <div id="footer-menu">
+        <a href="{% url 'about' %}"><h4>О нас</h4></a>
+        <a href="{% url 'home' %}"><h4>Главная</h4></a>
+        <a href="{% url 'request' %}"><h4>Оставить заявку</h4></a>
+        <a href="{% url 'posts' %}"><h4>Список участников</h4></a>
+        </div>
+    </div>
+   
+    
+</body>
+</html>

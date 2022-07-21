@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="item">
+        <a href="{% url 'post' post.id %}">
+            <h1>{{ post.title|capfirst }}</h1>
+        </a>
+        <h5>{{ post.subtitle }}</h5>
+        <p> {{ post.author.name }}</p>
+        {% if post.image %}
+            <img width="50%" src="{{post.image.url}}">
+        {% endif %}
+    </div>
+    <br>
+    <br>
+    <br> 
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+{% endblock content %}
