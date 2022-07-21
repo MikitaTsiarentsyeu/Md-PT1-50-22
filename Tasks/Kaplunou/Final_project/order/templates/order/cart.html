@@ -1,0 +1,66 @@
+{% extends 'base-page.html' %}
+{% load static %}
+
+{% block title %}
+    Cart
+{% endblock title %}
+
+{% block container %}
+<div class="page">
+<div class="container text-center my-5"> 
+    <div class="col-lg-10 col-md-8 mx-auto"> 
+      
+        <div class="col-sm-11">
+            <div class="cart_info">
+                <table class="table table-hover">
+                    <thead class="text-center">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col" style="width: 350px">Name</th>
+                        <th scope="col" style="width: 110px">Qty</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Amount</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    {% for item in items %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+
+                            <td>
+                                <a href="{% url 'detail' item.product_id %}"> {{ item.product |truncatechars:39 }} </a>
+                            </td>
+                            <td>{{ item.quantity }}</td>
+                            <td>{{ item.price }}</td>
+                            <td>{{ item.amount }}</td>
+                            <td>
+                              <div class="col-10 col-md-auto item">
+                                <form method="post" action="{% url 'cart_delete_item' item.pk %}">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-secondary"><u>Delete</u></button>
+                                </form>
+                              </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><b>Total: </b></td>
+                        <td>{{ cart.amount }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <div class="continue_or_next text-center">
+                    <a href="{% url 'shop' %}" class="btn _to_shope">Continue to Shop</a>
+                    <a class="contactus-bar-btn f_right" href="{% url 'make_order' %}">Process to Payment</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>    
+{% endblock container %}

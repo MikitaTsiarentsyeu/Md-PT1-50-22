@@ -1,0 +1,48 @@
+{% extends 'base-page.html' %}
+{% load static %}
+{% block title %}
+    Shop
+{% endblock title %}
+
+{% block container %}
+<div class="page">
+  <div class="container text-center my-5">
+    <div class="row ">
+      {% for product in object_list %}
+      <div class="col-lg-4 col-md-8 mx-auto my-3">
+                    <div class="card" style="width: 20rem;">
+                        <form method="post" action="{% url 'add_item_to_cart' product.pk %}">
+                            <img src="{{product.image_url}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title"><b>{{ product.name}}</b></h5>
+                                <p class="card-text">
+                                    {{ product.description }}
+                                </p>
+                
+                            </div>
+                            <button class="btn btn-secondary"><a class="log" href="{% url 'detail' product.pk %}">Detail</a></button>
+
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Price: {{ product.price }}</li>
+                                
+                                <li class="list-group-item">
+                              
+                {% csrf_token %}
+                <label class="form-label" for="id_quantity">Quantity:</label>
+                <input type="number" name="quantity" value="1" min="1"
+                     required id="id_quantity"/>
+                                </li>
+                            </ul>
+                            <div class="card-body">
+                                <button type="submit" class="btn btn-secondary mx-auto">buy now</button>
+                          
+                                <br><br>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+    </div>
+  </div>
+</div>  
+{% endblock container %}

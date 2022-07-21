@@ -1,0 +1,33 @@
+{% extends 'base-page.html' %}
+{% load static %}
+
+{% block title %}
+    Login
+{% endblock title %}
+
+{% block container %}
+<div class="page">     
+    <div class="card mx-auto my-5" style="width: 30rem;">
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div>
+                <h2 class="mb-3 mx-3 my-3">{{ attention }}</h2>
+            </div>
+            <div class="mb-3 my-3 mx-3">
+                <label class="form-label" for="id_username">Username</label>
+                <input class="form-control" id="id_username" name="username" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3 mx-3">
+                <label for="exampleInputPassword1" class="form-label" for="id_password">Password</label>
+                <input type="password" class="form-control" id="id_password" name="password">
+            </div>
+            <div class="mb-3 mx-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div>
+            <button type="submit" class="btn btn-primary mx-3 my-3" href="#">Submit</button> 
+            <a class="dropdown-item" href="{% url 'register' %}">Register</a>
+        </form>
+    </div>
+</div> 
+{% endblock container %}
