@@ -1,0 +1,36 @@
+
+
+ .image {
+    margin-bottom: 10px;
+
+}
+
+.image img {
+    height: 350px;
+    width: 80%;
+    object-fit: cover;
+}
+
+.info {
+    font-size: 21px;
+    color: #000;
+
+}
+
+.info a {
+    color: #000;
+    text-decoration: none;
+}
+
+.info a:hover {
+    color: peru;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.product {
+    text-align: center;
+}

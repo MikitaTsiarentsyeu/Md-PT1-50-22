@@ -1,0 +1,223 @@
+/**
+ * Базовые стили для всего сайта
+ */
+ * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+*:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	position: relative;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 16px;
+	line-height: 1.4;
+	color: black;
+	min-width: 320px;
+	overflow-x: hidden;
+	height: auto;
+}
+
+
+/**
+ * Другие стили
+ */
+
+ .navbar {
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 4px 10 px rgba(0, 0, 0, .1) ;
+ }
+
+ .navbar .container {
+ 
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+ .navbar-menu {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+ }
+
+ .navbar-menu li{
+    display: inline-block;
+ }
+
+ .navbar-menu li a {
+    display: inline-block;
+    color: #000;
+    opacity: 0.6;
+    text-decoration: none;
+    padding: 10px;
+    transition: all .1s ease-in-out;
+ }
+
+ .navbar-menu li a:hover {
+    opacity: 1;
+ }
+
+ .navbar-wrap {
+    display: flex;
+    flex-flow: row nowrap;
+ }
+
+ .navbar-cart {
+    margin-left: 20px;
+    padding: 10px 20px;
+    background-color: peru;
+    border-radius: 100px;
+    color: #000;
+    text-decoration: none;
+    transition: all .1s ease-out;
+ }
+
+ .navbar-cart:hover {
+    transform: scale(1.04);
+    color: black;
+ }
+
+ .navbar-logo {
+    font-weight: 700;
+    font-size: 26px;
+    text-decoration: none;
+    color: #000;
+    transition: all .1s ease-in-out;
+ }
+
+ .navbar-logo:hover {
+    color: peru;
+ } 
+
+ .category h1 {
+   font-size: 35px;
+   padding: 15px;
+   color: black;
+   text-align: center;
+ }
+
+ .category-wrap {
+   text-align: center;
+ }
+
+ .category {
+   margin-top: 20px;
+}
+
+ .category a {
+   font-size: 40px;
+   font-weight: bold;
+   padding: 3px 15px;
+   background-color: peru;
+   border-radius: 100px;
+   color: #000;
+   text-decoration: none;
+
+ }
+
+ .category a:hover {
+   transform: scale(1.04);
+ }
+
+ .description {
+
+   text-align: center;
+}
+
+.description img {
+   width: 200px;
+   height: 350px;
+   object-fit: cover;
+}
+
+td {
+   width: 280px;
+   height: 80px;
+   text-align: center;
+}
+
+th {
+   text-align: center;
+   background-color: peru;
+}
+
+.total {
+   font-weight: bold;
+}
+
+.cart-name {
+   text-align: center;
+   margin-bottom: 20px;
+}
+
+.continue {
+   text-align: center;
+   margin-top: 30px;
+}
+
+.continue a {
+   text-align: center;
+   padding: 10px 20px;
+   background-color: peru;
+   border-radius: 100px;
+   color: #000;
+   text-decoration: none;
+}
+
+.continue a:hover {
+   transform: scale(1.04);
+}
+
+table {
+   margin-left: 15px;
+}
+
+.del a{
+   color: #000;
+}
+
+.home {
+   background-image: url("../img/background.jpg");
+   min-height: 700px;
+   background-size: cover;
+}
+
+.welcome {
+   text-align: center;
+   font-style: italic;
+   margin-top: 15px;
+}
+
+.about {
+   margin-top: 20px;
+   margin-bottom: 15px;
+   text-align: center;
+}
+
+.about-list {
+   list-style-type: none;
+}
+
+.about li {
+   margin-top: 20px;
+   opacity: 0.7;
+}
+
+.about li:hover {
+   opacity: 1;
+}

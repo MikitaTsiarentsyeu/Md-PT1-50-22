@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{product.name|capfirst}}{% endblock %}
+
+{% block content %}
+    <div class="description">
+        <div class="product-image">
+            {% if product.image %}
+            <img width=50% src="{{product.image.url}}">
+            {% endif %}
+        </div>
+        <div class="info-wrap">
+            <div class="info">
+                <h3>{{product.name|capfirst}}</h3>
+                <span class="category">{{product.category.name}}</span><br>
+                <span class="price">{{product.price}} руб.</span>
+            </div>
+                <form action="{% url 'cart_add' product.id %}" method="post">
+                    {{ cart_product_form }}
+                    {% csrf_token %}
+                    <input type="submit" value="Добавить в корзину">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

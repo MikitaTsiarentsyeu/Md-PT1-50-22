@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{category.name|capfirst}}{% endblock %}
+
+{% block content %}
+
+    <div class="container mt-5">
+        <div class="row">
+            {% for product in products %}
+                <div class="col-md-3">
+                    <div class="product">
+                        <div class="image">
+                            {% if product.image %}
+                            <img src="{{product.image.url}}">
+                            {% endif %}
+                        </div>
+                        <div class="info">
+                            <a href="{% url 'product' product.id %}"><h3>{{product.name|capfirst}}</h3></a>
+                            <span class="category">{{product.category.name}}</span><br>
+                            <span class="price">{{product.price}} руб.</span>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
