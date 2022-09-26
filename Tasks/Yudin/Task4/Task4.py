@@ -22,6 +22,7 @@ def is_prime(k):
 
     return True
 print(is_prime(787))
+print(is_prime(777))
 #3
 def get_ranges(numberlist):
     prev_number = min(numberlist) if numberlist else None
