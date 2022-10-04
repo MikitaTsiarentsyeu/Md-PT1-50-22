@@ -1,0 +1,39 @@
+{% extends 'base-page.html' %}
+{% load static %}
+
+{% block title %}
+    About
+{% endblock title %}
+
+{% block container %}
+<div class="page">
+    <div class="container text-center my-5">
+        <div class="row">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <img src="{% static 'order/GH012118_1644915262773_2.jpg' %}" style="width: 50%; height: 55%; border-radius: 50%; 
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+                padding: 0.4em;
+                margin-bottom: 0.5em;" width="500">
+                <h1 class="fw-light">Diving equipment</h1>
+                <p class="lead text-muted">Hi, this is our diving gear shop. Fish is'nt food.</p>
+                <a href="https://www.instagram.com/stanislav_kaplunov/" target="_blank"
+                class="btn btn-primary">Follow me</a>  
+                <a href="https://www.vk.com/stas_kaplunov/" target="_blank"
+                class="btn btn-secondary">Follow me</a> 
+                <div class="container text-center my-2">
+                  <button type="button" onclick="myFunc()" class="btn btn-secondary"> Hello there</button>
+                  <script>
+                    function myFunc() {
+                     var x = "General Kenobi"; 
+                   alert(x);
+                   }
+                  </script>
+                  </div>
+               </div>  
+            </div>
+       </div>
+     
+    </div>  
+
+
+{% endblock container %}
