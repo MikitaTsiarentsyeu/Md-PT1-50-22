@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Категории{% endblock %}
+
+{% block content %}
+    <div class="category-wrap">
+        {% for category in categories %}
+            <div class="category">
+                <a href="{% url 'category' category.id %}">
+                {{category.name|capfirst}}
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

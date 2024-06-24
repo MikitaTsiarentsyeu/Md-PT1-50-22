@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main_app/css/libs/bootstrap-grid.min.css' %}"> 
+    <link rel="stylesheet" href="{% static 'main_app/css/libs/bootstrap-reboot.min.css' %}"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e3eca03a66.js" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="{% static 'main_app/css/main.css' %}"> 
+    <link rel="stylesheet" href="{% static 'main_app/css/products.css' %}"> 
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href ='/' class="navbar-logo"><i class="fa-solid fa-paw"></i> ЗооМир</a>
+            <div class="navbar-wrap">
+                <ul class="navbar-menu">
+                    <li><a href="{% url 'about' %}"><i class="fa-solid fa-bone"></i>  О нас</a></li>
+                    <li><a href="{% url 'catalog' %}"><i class="fa-solid fa-bone"></i>  Категории</a></li>
+                    <li><a href="{% url 'products' %}"><i class="fa-solid fa-bone"></i>  Все товары</a></li>
+                </ul>
+                <a href ="{% url 'cart_detail' %}" class="navbar-cart"><i class="fa-solid fa-cart-shopping"></i> Корзина</a>
+            </div>
+        </div>
+    </nav>
+    <main>    
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

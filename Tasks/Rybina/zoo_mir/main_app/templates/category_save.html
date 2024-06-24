@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{category.name|capfirst}}{% endblock %}
+
+{% block content %}
+    <div>
+        <h1>{{category.name|capfirst}}</h1>
+        {% for product in products %}
+            <div>
+                <a href="{% url 'product' product.id %}">
+                    <h1>{{product.name|capfirst}}</h1>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
